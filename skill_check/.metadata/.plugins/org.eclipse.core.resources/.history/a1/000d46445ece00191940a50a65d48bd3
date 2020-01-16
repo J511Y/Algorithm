@@ -1,0 +1,26 @@
+package workspace;
+import java.util.*;
+import java.io.*;
+class algo_study_week2 {
+	public static void main(String[] a) throws Exception {
+		/*
+		 * 첫 시도. 메모리 초과 발생. 최악의 경우 50만번 replace 해야 돼서 그런가..?
+		 */
+//		  BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        String str = br.readLine();
+//        String boom = br.readLine();
+//        while (str.contains(boom)) str = str.replaceAll(boom, "");
+//        if (str.equals("")) System.out.println("FRULA");
+//        else System.out.println(str);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String str = br.readLine();
+		String boom = br.readLine();
+		do {
+			String temp = "";
+			for(String s : str.split(boom)) temp += s;
+			str = temp;
+		}while(str.contains(boom));
+		if (str.equals("")) System.out.println("FRULA");
+		else System.out.println(str);
+	}
+}

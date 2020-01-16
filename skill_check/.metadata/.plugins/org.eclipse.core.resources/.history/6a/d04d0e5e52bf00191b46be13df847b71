@@ -1,0 +1,20 @@
+package workspace;
+
+import java.io.*;
+import java.util.*;
+public class Main {
+	public static boolean func(int a) {
+		if(a<100)return true;
+		if(a==1000)return false;
+		List<Integer> list = new ArrayList<>();
+		for(byte b : (a+"").getBytes())list.add(Integer.parseInt((char)b+""));
+		return list.get(0)-list.get(1) == list.get(1)-list.get(2);
+	}
+	public static void main(String[] args) throws Exception {
+		Scanner sc = new Scanner(System.in);
+		int input = sc.nextInt();
+		int cnt = 0;
+		for(int i=1; i<=input; i++)if(func(i))cnt+=1;
+		System.out.println(cnt);
+	}
+}

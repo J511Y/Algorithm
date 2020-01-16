@@ -1,0 +1,30 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+class Main {
+	
+	/**
+	 * @param n 콘솔에 출력할 라인 수
+	 * @param x 인자로 넘겨줄 수열.
+	 */
+	public static void antSeq(int n, int x) {
+		if(n==0) return;
+		byte [] bArr = (x+"").getBytes();
+		int [] iArr = new int [10];
+		for(int i=0; i<bArr.length; i++)
+			iArr[bArr[i]-'0']++;
+		x = 0;
+		for(int i=1; i<4; i++) {
+			if(iArr[i] == 0) continue;
+			x *= 10; x += i;
+			x *= 10; x += iArr[i];
+		}
+		System.out.println(x);
+		antSeq(n-1, x);
+	}
+	public static void main(String [] args) throws IOException {
+		antSeq(5, 1915333);
+		
+	}
+}

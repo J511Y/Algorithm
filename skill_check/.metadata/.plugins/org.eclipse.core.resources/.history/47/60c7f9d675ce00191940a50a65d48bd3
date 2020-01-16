@@ -1,0 +1,11 @@
+package workspace;
+import java.util.*;
+import java.io.*;
+public class baekjoon_1764 {
+	public static void main(String[] args) throws Exception{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		List<String> list1 = new ArrayList<>();
+		List<String> list2 = new ArrayList<>();
+		System.out.println(br.read());
+	}
+}

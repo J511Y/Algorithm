@@ -1,0 +1,62 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+class Main {
+	static boolean func(int i,int j) {
+		boolean b=false;
+		for(int k=0; k<8; k++) {
+			int pow=(int)Math.pow(3, k);
+			if((i/pow)%3==1 && (j/pow)%3==1) {
+				b=true;
+				break;
+			}
+		}
+		return b;
+	}
+	public static void main(String[] a) throws IOException{
+		Scanner sc=new Scanner(System.in);
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		int len=sc.nextInt();
+		for(int i=0; i<len; i++) {
+			for(int j=0; j<len; j++) {
+				bw.write(func(i,j)?" ":"*");
+			}
+			bw.write("\n");
+		}
+		bw.flush();
+	}
+}
+/*
+ * 1 1, 1 4, 1 7
+ * 3 3, 3 4, 3 5, 3 12, 3 13, 3 14
+********* ********* *********
+* ** ** * * ** ** * * ** ** *
+********* ********* *********
+***   *** ***   *** ***   ***
+* *   * * * *   * * * *   * *
+***   *** ***   *** ***   ***
+********* ********* *********
+* ** ** * * ** ** * * ** ** *
+********* ********* *********
+
+*********           *********
+* ** ** *           * ** ** *
+*********           *********
+***   ***           ***   ***
+* *   * *           * *   * *
+***   ***           ***   ***
+*********           *********
+* ** ** *           * ** ** *
+*********           *********
+
+********* ********* *********
+* ** ** * * ** ** * * ** ** *
+********* ********* *********
+***   *** ***   *** ***   ***
+* *   * * * *   * * * *   * *
+***   *** ***   *** ***   ***
+********* ********* *********
+* ** ** * * ** ** * * ** ** *
+********* ********* *********
+*/

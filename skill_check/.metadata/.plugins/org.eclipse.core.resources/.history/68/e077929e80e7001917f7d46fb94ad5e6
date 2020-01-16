@@ -1,0 +1,10 @@
+package kakao;
+
+public class kakao_2020_findLyrics {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

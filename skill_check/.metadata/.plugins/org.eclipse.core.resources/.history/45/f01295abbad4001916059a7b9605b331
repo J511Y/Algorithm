@@ -1,0 +1,27 @@
+package baekjoon_math;
+import java.util.*;
+public class baekjoon_1016 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		long min = sc.nextLong();
+		long max = sc.nextLong();
+		List<Integer> list = new ArrayList<>();
+		Set<Long> set = new HashSet<>();
+		for(int i=(int)Math.sqrt(min); i<max; i++) {
+			if(i<2)continue;
+			if(Math.pow(i, 2) <= max/2) list.add((int)Math.pow(i, 2));
+			else break;
+		}
+		for(int i=0; i<list.size(); i++) {
+			int mul = 1;
+			long pow = list.get(i);
+			while(true) {
+				long val = pow * mul;
+				if(val > max) break;
+				if(min <= val && val <= max) set.add(val);
+				mul++;
+			}
+		}
+		System.out.println(max-min-set.size()+1+min==1?-1:0);
+	}
+}

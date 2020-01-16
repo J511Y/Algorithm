@@ -1,0 +1,14 @@
+package workspace;
+import java.util.*;
+public class baekjoon_1475 {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String input = sc.next();
+		int [] arr = new int [10]; //0~9까지 저장할 배열
+		for(byte b : input.getBytes()) {
+			int i = (char)b;
+			System.out.println(i);
+		}
+	}
+}

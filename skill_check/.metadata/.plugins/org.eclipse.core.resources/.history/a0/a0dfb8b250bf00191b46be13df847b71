@@ -1,0 +1,23 @@
+package workspace;
+
+import java.io.*;
+import java.util.*;
+class Test{
+	static long l =0;
+	long sum(int[]a) {
+		Arrays.stream(a).forEach(s->l+=s);
+		return l;
+	}
+}
+public class Main {
+	public static int func(int a) {
+		String s = a+"";
+		for(byte b : s.getBytes())a+=Integer.parseInt((char)b+"");
+		return a;
+	}
+	public static void main(String[] args) throws Exception {
+		System.out.println(func(39));
+		
+	}
+	
+}

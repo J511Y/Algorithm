@@ -1,0 +1,57 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.Collectors;
+public class Main {
+	public static void main(String[] args) throws Exception {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.next().toLowerCase();
+		Map<String,Integer> map = new HashMap<>();
+		for(byte b : s.getBytes())map.put((char)b+"", map.getOrDefault((char)b+"", 0)+1);
+		System.out.println(map.values());
+		String max = "";
+		for(String str : map.keySet())max=map.getOrDefault(max, 0)>map.get(str)?max:str;
+		System.out.println(max);
+		
+	}
+}
+/*
+***************************
+* ** ** ** ** ** ** ** ** *
+***************************
+***   ******   ******   ***
+* *   * ** *   * ** *   * *
+***   ******   ******   ***
+***************************
+* ** ** ** ** ** ** ** ** *
+***************************
+*********         *********
+* ** ** *         * ** ** *
+*********         *********
+***   ***         ***   ***
+* *   * *         * *   * *
+***   ***         ***   ***
+*********         *********
+* ** ** *         * ** ** *
+*********         *********
+***************************
+* ** ** ** ** ** ** ** ** *
+***************************
+***   ******   ******   ***
+* *   * ** *   * ** *   * *
+***   ******   ******   ***
+***************************
+* ** ** ** ** ** ** ** ** *
+***************************
+*
+*********
+* ** ** *
+*********
+***   ***
+* *   * *
+***   ***
+*********
+* ** ** *
+*********
+*
+*/

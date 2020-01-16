@@ -1,0 +1,11 @@
+package workspace;
+import java.util.*;
+public class baekjoon_2998 {
+
+	public static void main(String[] args) {
+		String s = new Scanner(System.in).next();
+		System.out.println(Integer.parseInt(s,2));
+		System.out.println(Integer.parseInt(Integer.parseInt(s,2)+"", 8));
+	}
+
+}

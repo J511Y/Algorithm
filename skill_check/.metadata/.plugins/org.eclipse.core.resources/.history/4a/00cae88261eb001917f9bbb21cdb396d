@@ -1,0 +1,29 @@
+package baekjoon_stack;
+import java.util.*;
+public class baekjoon_4949 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Stack<Byte> stk = new Stack<>();
+		String s="";
+		while(!(s = sc.nextLine()).equals(".")) {
+			byte [] arr = s.getBytes();
+			for(byte b : arr) {
+				if(b=='(' || b=='[') stk.push(b);
+				else if(b==')') {
+					if(stk.size()==0 || stk.peek()=='[') {
+						System.out.println("no");
+						stk.clear();
+						break;
+					}else stk.pop();
+				}else if(b==']'){
+					if(stk.size()==0 || stk.peek()=='(') {
+						System.out.println("no");
+						stk.clear();
+						break;
+					}else stk.pop();
+				}
+			}
+			if(stk.size()==0) System.out.println("yes");
+		}
+	}
+}

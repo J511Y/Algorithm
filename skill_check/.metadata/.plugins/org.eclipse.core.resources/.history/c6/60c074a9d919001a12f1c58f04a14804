@@ -1,0 +1,89 @@
+import java.util.*;
+class Node {
+	private int data;
+	private Node left;
+	private Node right;
+	
+	// Getter, Setter, toString();
+	public Node(int data) {
+		this.data = data;
+	}
+	
+	public int getData() {
+		return data;
+	}
+	
+	public void setData(char data) {
+		this.data = data;
+	}
+	
+	public Node getLeft() {
+		return left;
+	}
+	
+	public void setLeft(Node left) {
+		this.left = left;
+	}
+	
+	public Node getRight() {
+		return right;
+	}
+	
+	public void setRight(Node right) {
+		this.right = right;
+	}
+	
+	public String toString() {
+		return this.data + "";
+	}
+}
+
+public class Main {
+	static public void inorder(Node n) {
+		if (n != null) {
+			inorder(n.getLeft());
+			System.out.print(" " + n.getData());
+			inorder(n.getRight());
+		}
+	}
+
+	static public void preorder(Node n) {
+		if (n != null) {
+			System.out.print(n.getData() + " ");
+			preorder(n.getLeft());
+			preorder(n.getRight());
+		}
+	}
+	
+	static public void postorder(Node n) {
+		if (n != null) {
+			postorder(n.getLeft());
+			postorder(n.getRight());
+			System.out.print(n.getData() + " ");
+		}
+	}
+
+	public static void main(String[] args) {
+		// 트리를 생성하고 자료를 넣는 과정
+		Node rootNode = new Node(1);
+		rootNode.setLeft(new Node(2));
+		rootNode.setRight(new Node(3));
+		rootNode.getLeft().setLeft(new Node(4));
+		rootNode.getLeft().setRight(new Node(5));
+		rootNode.getRight().setLeft(new Node(6));
+		rootNode.getRight().setRight(new Node(7));
+		rootNode.getLeft().getRight().setRight(new Node(8));
+		rootNode.getRight().getRight().setLeft(new Node(9));
+		
+		// in-order, pre-order, post-order
+		System.out.println("\n\n\n=============inorder============");
+		inorder(rootNode);
+		
+		System.out.println("\n\n\n=============preorder============");
+		preorder(rootNode);
+		
+		System.out.println("\n\n\n=============postorder============");
+		postorder(rootNode);
+	}
+}
+

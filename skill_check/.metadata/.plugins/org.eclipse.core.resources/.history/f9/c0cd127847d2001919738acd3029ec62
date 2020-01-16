@@ -1,0 +1,19 @@
+package workspace.baekjoon;
+import java.util.*;
+public class baekjoon_1718 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String [] plain = sc.nextLine().split("");
+		String [] key = sc.next().split("");
+		for(int i=0; i<plain.length; i++) {
+			if( plain[i].equals(" ") ) {
+				System.out.print(" ");
+				continue;
+			}
+			char c = (char)(plain[i].charAt(0) - key[i%key.length].charAt(0));
+			if (c < 'a') c += 26;
+			System.out.print(c);
+		}
+	}
+}

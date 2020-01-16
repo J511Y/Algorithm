@@ -1,0 +1,23 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+class Main {
+	public static long solution(int N) {
+		long [] result = new long[N];
+        result[0]=4;result[1]=6;
+        for(int i=2; i<N; i++) {
+        	result[i]=result[i-1]+result[i-2];
+        }
+        return result[N];
+    }
+	public static void main(String[] a){
+		System.out.println(solution(1));
+		System.out.println(solution(2));
+		System.out.println(solution(3));
+		System.out.println(solution(4));
+		System.out.println(solution(5));
+		System.out.println(solution(6));
+		System.out.println(solution(7));
+	}
+}

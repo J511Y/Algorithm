@@ -1,0 +1,23 @@
+package workspace;
+import java.util.*;
+import java.util.stream.IntStream;
+public class test {
+	public static List<Integer> yaksu(int x){
+		List<Integer> list = new ArrayList<>();
+		for(int i=1; i<(int)Math.sqrt(x)+1; i++) {
+			if(x%i==0) {
+				list.add(i);
+				list.add(x/i);
+			}
+		}
+		return list.sort(null);;
+	}
+	public static int[] solution(int n, int m) {
+		int[] answer = {};
+		System.out.println(yaksu(n));
+		return answer;
+	}
+	public static void main(String [] args) {
+		for(int i : solution(3,12))System.out.println(i);
+	}
+}

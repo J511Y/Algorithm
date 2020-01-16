@@ -1,0 +1,9 @@
+package baekjoon_string;
+import java.util.*;
+public class baekjoon_3613 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.next();
+		System.out.println("long_and_mnemonic_identifier".equals("long_and_mnemonic_identifier".toLowerCase()));
+	}
+}

@@ -1,0 +1,22 @@
+package workspace;
+import java.util.*;
+import java.util.stream.IntStream;
+public class test {
+	public static String[] solution(int n, int[] arr1, int[] arr2) {
+		String[] answer = new String [n];
+		for(int i=0; i<n; i++) {
+			String s = "     ";
+			s = change(s,Integer.toBinaryString(arr1[i]).getBytes());
+			s = change(s,Integer.toBinaryString(arr2[i]).getBytes());
+			answer[i]=s;
+		}
+		return answer;
+	}
+	private static String change(String s, byte[] bytes) {
+		for(byte b : bytes)System.out.println(b);
+		return null;
+	}
+	public static void main(String [] args) {
+		System.out.println(solution(5, new int [] {9, 20, 28, 18, 11}, new int [] {30, 1, 21, 17, 28}));
+	}
+}

@@ -1,0 +1,73 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+class Main {
+	static char [][] result;
+	static void func(int len) {
+		int l=len/3;
+		System.out.println(l);
+		if(l==0)return;
+		else if(len!=result.length) {
+			for(int i=l; i<result.length; i+=len) {
+				for(int j=l; j<result.length; j+=len) {
+					for(int k=0; k<l; k++) {
+						for(int n=0; n<l; n++) {
+							result[i+n][j+k]=' ';
+						}
+					}
+				}
+			}
+			func(l);
+		}else {
+			for(int i=l; i<l*2; i++) {
+				for(int j=l; j<l*2; j++) {
+					result[i][j]=' ';
+				}
+			}
+			func(l);
+		}
+	}
+	public static void main(String[] a){
+		Scanner sc=new Scanner(System.in);
+		int len=sc.nextInt();
+		result=new char[len][len];
+		for(char [] arr:result)Arrays.fill(arr, '*');
+		func(len);
+		for(int i=0; i<result.length; i++) {
+			for(int j=0; j<result.length; j++) {
+				System.out.print(result[i][j]);
+			}
+			System.out.println();
+		}
+	}
+}
+/*
+***************************
+* ** ** ** ** ** ** ** ** *
+***************************
+***   ******   ******   ***
+* *   * ** *   * ** *   * *
+***   ******   ******   ***
+***************************
+* ** ** ** ** ** ** ** ** *
+***************************
+*********         *********
+* ** ** *         * ** ** *
+*********         *********
+***   ***         ***   ***
+* *   * *         * *   * *
+***   ***         ***   ***
+*********         *********
+* ** ** *         * ** ** *
+*********         *********
+***************************
+* ** ** ** ** ** ** ** ** *
+***************************
+***   ******   ******   ***
+* *   * ** *   * ** *   * *
+***   ******   ******   ***
+***************************
+* ** ** ** ** ** ** ** ** *
+***************************
+*/

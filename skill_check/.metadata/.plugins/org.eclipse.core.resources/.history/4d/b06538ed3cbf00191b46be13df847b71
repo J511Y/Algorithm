@@ -1,0 +1,17 @@
+package workspace;
+
+import java.io.*;
+import java.util.*;
+public class Main {
+	public static void main(String[] args) throws Exception{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		List<String> arr = Arrays.asList(br.readLine().split(" "));
+		arr.sort(new Comparator<String>() {
+			@Override
+			public int compare(String o1, String o2) {
+				return Integer.parseInt(o2)-Integer.parseInt(o1);
+			}
+		});
+		System.out.println(arr.get(1));
+	}
+}

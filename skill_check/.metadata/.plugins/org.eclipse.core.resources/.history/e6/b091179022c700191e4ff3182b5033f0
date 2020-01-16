@@ -1,0 +1,31 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+class Main {
+	static int d(int a) {
+		String s = a+"";
+		for(byte b : s.getBytes())a+=Integer.parseInt((char)b+"");
+		return a;
+	}
+	public static void main(String[] a){
+//		boolean [] bArr = new boolean[10000];//1~10000까지 생성자 존재 유무를 저장할 배열
+//		for(int i=1; i<=10000; i++) {//10000까지는 안가도 될 듯 한데 그래봐야 99xx까지라서 걍 10000까지
+//			try{//IndexOutOfBound Exception이 발생할 수 있다.
+//				bArr[d(i)-1]=true;
+//			}catch(Exception e) {}
+//		}
+//		for(int i=0; i<bArr.length; i++)if(!bArr[i])System.out.println(i+1);
+		System.out.println((int)Math.sqrt(Math.PI));
+		int i = -2147483648;
+		System.out.println(i);
+	}
+}
+/*
+ * 1 2  3  4   5   6   7   8   9
+ * 1 3  6  10 15  21  28  36  45
+ * 1 4 10  20 35  56  84 120 165
+ * 1 5 15  35 70 126 210 330 395  
+
+*
+*/

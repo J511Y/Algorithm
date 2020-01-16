@@ -1,0 +1,30 @@
+package kakao;
+
+public class kakao_2019_secret_map {
+	public static String[] solution(int n, int[] arr1, int[] arr2) {
+		String[] answer = new String [n];
+		for(int i=0; i<n; i++) {
+			String s = " ".repeat(n);
+			s = change(s.getBytes(),Integer.toBinaryString(arr1[i]).getBytes());
+			s = change(s.getBytes(),Integer.toBinaryString(arr2[i]).getBytes());
+			answer[i]=s;
+		}
+		return answer;
+	}
+	private static String change(byte [] s, byte[] bytes) {
+		int blen = bytes.length;
+		for(int i=0; i<blen; i++) {
+			if((char)bytes[blen-i-1]=='1') s[s.length-i-1]='#';
+		}
+		return new String(s);
+	}
+	public static void main(String[] args) {
+		for(String s : solution(5, 
+								new int [] {9,20,28,18,11},
+								new int [] {30,1,21,17,28})) {
+			System.out.println(s);
+		}
+
+	}
+
+}

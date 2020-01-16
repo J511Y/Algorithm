@@ -1,0 +1,23 @@
+import java.util.*;
+class Main {
+	static int gcd(int a,int b) {
+		if(b == 0) return a;
+		return gcd(b, a % b);
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = "a b  cd  ";
+		String[] arr = s.split(" ");
+		StringBuffer sb = new StringBuffer();
+		for(String str : arr) {
+			if(str.equals("")){
+                sb.append(" ");
+                continue;
+            }
+			sb.append(str.substring(0, 1).toUpperCase());
+			sb.append(str.substring(1).toLowerCase()+" ");
+		}
+		sb = sb.deleteCharAt(sb.length() - 1);
+		System.out.println(sb.toString());
+	}
+}

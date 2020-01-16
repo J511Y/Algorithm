@@ -1,0 +1,12 @@
+package workspace;
+import java.util.*;
+public class baekjoon_2998 {
+
+	public static void main(String[] args) {
+		int input = new Scanner(System.in).nextInt();
+		
+		System.out.println(Integer.toOctalString(input));
+//		System.out.printf("%o",Integer.parseInt(s));
+	}
+
+}

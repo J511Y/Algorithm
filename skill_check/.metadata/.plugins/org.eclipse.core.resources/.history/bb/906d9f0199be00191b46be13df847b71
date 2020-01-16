@@ -1,0 +1,22 @@
+package workspace;
+import java.util.*;
+import java.util.stream.IntStream;
+
+public class test {
+	public static String solution(int n) {
+	      StringBuffer answer = new StringBuffer();
+	      int limit = 0;
+	      while(Math.pow(3, limit)<n)limit++;
+	      limit--;
+	      for(int i=1; i<=limit; i++) {
+	    	  int a = (n-1/(int)Math.pow(3, i))%3;
+	    	  answer.append(a==0?"4":a==1?"1":"2");
+	      }
+	      answer.append(n%3==0?"4":n%3==1?"1":"2");
+	      
+	      return new String(answer.reverse());
+	  }
+	public static void main(String [] args) {
+		System.out.println(solution(3));
+	}
+}

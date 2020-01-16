@@ -1,0 +1,23 @@
+package workspace;
+import java.util.*;
+import java.util.stream.IntStream;
+
+public class test {
+	public static String solution(int n) {
+	      StringBuffer answer = new StringBuffer();
+	      int limit = 1;
+	      answer.append(n%3==0?"4":n%3==1?"1":"2");
+	      n=n-4;
+	      while(n>=0) {
+	    	  answer.append(n%3==0?"4":n%3==1?"1":"2");
+	    	  n/=3;
+	    	  limit+=1;
+	      }
+	      
+	      System.out.println(limit);
+	      return new String(answer.reverse());
+	  }
+	public static void main(String [] args) {
+		System.out.println(solution(4));
+	}
+}

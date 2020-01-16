@@ -1,0 +1,12 @@
+import java.util.*;
+public class Main {
+	static char black = '¡Ü', white = '¡Û', empty = '¦«';
+	public static void main(String[] args) {
+		char[][] arr = new char[8][8];
+		for(char[] carr : arr) Arrays.fill(carr, empty);
+		arr[3][3] = arr[4][4] = black;
+		arr[3][4] = arr[4][3] = white;
+		for(char[] carr : arr) System.out.println(Arrays.toString(carr));
+	}
+}
+

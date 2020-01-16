@@ -1,0 +1,26 @@
+package workspace;
+import java.util.*;
+public class test {
+	/* 
+	 * 소수 정의에서 1과 자기자신으로만 나누어떨어지는 수가 소수라고 적혀있어서 1도 포함시켰음
+	 * count 변수는 시도 횟수를 출력하기 위함이므로 손코딩시 작성하지 않아도 됨.
+	 */
+	static int count = 0;
+	public static boolean isPrime(int input) { // 소수인지 확인해주는 메서드
+		for(int i=2; i<(int)Math.sqrt(input)+1; i++) {	// 2부터 해당 숫자의 제곱근+1 까지 반복
+			count += 1;
+			if(input%i==0)return false;		   // 나누어떨어지는 수가 있다면 해당 숫자는 소수가 아님
+		}
+		return true;						   // 무사히 반복을 마쳤다면 해당 숫자는 소수임
+	}
+	public static void main(String [] args) {
+		int result = 0;						   // 숫자들의 합을 저장해줄 변수 선언 및 초기화
+		for(int i=1; i<=1000; i++) {		   // 1부터 1000까지 반복
+			count += 1;
+			if(isPrime(i))result+=i;		   // 소수라면 result에 더해줌.
+		}
+		System.out.println("result -> "+result);			   // 결과물 출력
+		System.out.println("count -> "+count);
+		
+	}
+}

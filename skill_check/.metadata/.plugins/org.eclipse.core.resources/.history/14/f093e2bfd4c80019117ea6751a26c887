@@ -1,0 +1,17 @@
+package workspace;
+/*
+1. 단일 링크드 리스트(Single Linked List)
+노드에 링크가 1개
+단방향으로 진행
+2. 이중(양방향) 링크드 리스트(Double Linked List)
+노드에 링크가 2개
+양방향으로 진행
+3. 환형(원형) 링크드 리스트(Circular Linked List)
+마지막 노드가 첫번째 노드를 가리킴
+원형으로 진행 (회전)
+
+[출처] 링크드 리스트(Linked List)|작성자 BlackP
+ */
+class SingleLinkedList {
+	
+}

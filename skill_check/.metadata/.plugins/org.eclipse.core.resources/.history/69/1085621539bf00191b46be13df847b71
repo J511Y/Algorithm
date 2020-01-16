@@ -1,0 +1,12 @@
+package workspace;
+
+import java.io.*;
+import java.util.*;
+public class Main {
+	public static void main(String[] args) throws Exception{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String [] arr = br.readLine().split(" ");
+		int a=Integer.valueOf(arr[0]), b=Integer.valueOf(arr[1]);
+		System.out.println(a==b?"==":a>b?">":"<");
+	}
+}

@@ -1,0 +1,27 @@
+package workspace;
+import java.util.*;
+import java.util.stream.IntStream;
+public class test {
+	public static Comparator<Integer> com = new Comparator<Integer>() {
+		
+		@Override
+		public int compare(Integer o1, Integer o2) {
+			String one = (o1+"").charAt(0)+"";
+			String two = (o2+"").charAt(0)+"";
+			if(one.equals(two)) {
+				return compare(Integer.parseInt(one.substring(1)),Integer.parseInt(two.substring(1)));
+			}
+			return Integer.parseInt(one)-Integer.parseInt(two);
+		}
+	};
+	public static String solution(int[] numbers) {
+        String answer = "";
+        List<Integer> list = new ArrayList<>();
+        for(int i:numbers)list.add(i);
+        list.sort(com);
+        return answer;
+    }
+	public static void main(String [] args) {
+		System.out.println(solution(new int [] {3, 30, 34, 5, 9}));
+	}
+}

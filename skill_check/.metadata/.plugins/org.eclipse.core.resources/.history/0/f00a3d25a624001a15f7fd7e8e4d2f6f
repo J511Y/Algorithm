@@ -1,0 +1,13 @@
+import java.util.*;
+class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int p = sc.nextInt(), k = sc.nextInt();
+		for(int i = 2; i < (int)Math.sqrt(p) + 1; i++) {
+			if(p % i == 0) {
+				if(i < k) System.out.println("GOOD");
+				else System.out.println("BAD "+i);
+			}
+		}
+	}
+}

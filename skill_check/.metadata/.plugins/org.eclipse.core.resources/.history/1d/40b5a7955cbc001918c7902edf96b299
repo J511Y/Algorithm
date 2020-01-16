@@ -1,0 +1,29 @@
+package workspace;
+import java.util.*;
+public class test {
+	public static int solution(int num) {
+		int result = 0;
+		long a = num;
+		while(a>1) {
+			if(result==500)return-1;
+			result+=1;
+			if(a%2==0)a/=2;
+			else a=a*3+1;
+		}
+	    return result;
+	}
+	public static void main(String [] args) {
+//		System.out.println(solution(626331));
+//		System.out.println(solution(16));
+//		System.out.println(solution(6));
+		long n = 1234567890123456789l;
+		List<Long> list = new ArrayList<>();
+		while (n > 0) {
+			list.add( n % 10);
+			n /= 10;
+		}
+		Object [] arr = list.stream().toArray();
+		for(Object o : arr)System.out.println(o);
+		
+	}
+}

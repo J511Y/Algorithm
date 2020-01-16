@@ -1,0 +1,46 @@
+import java.util.*;
+class Pos{
+	int x;
+	int y;
+	Pos(int x, int y){ this.x = x; this.y = y;}
+}
+public class Main {
+	static Scanner sc = new Scanner(System.in);
+	static char black = '¡Ü', white = '¡Û', empty = '¦«';
+	static char[][] board;
+	static int board_size = 8;
+	static void boardSetting() {
+		board = new char[board_size][board_size];
+		for(char[] carr : board) Arrays.fill(carr, empty);
+		board[3][3] = board[4][4] = black;
+		board[3][4] = board[4][3] = white;
+	}
+	
+	static void boardPrint() {
+		for(char[] carr : board) {
+			for(char c : carr) System.out.print(c+" ");
+			System.out.println();
+		}
+	}
+
+	static void gameStart() {
+		boardSetting();
+		boardPrint();
+		
+		try {
+			Pos pos = new Pos(sc.nextInt(), sc.nextInt());
+		}
+	}
+	public static void main(String[] args) {
+		do {
+			gameStart();
+		}while(sc.next().equalsIgnoreCase("y"));
+		
+		for(int i = 0; i < board.length; i++) {
+			for(int j = 0; j < board.length; j++) {
+				
+			}
+		}
+	}
+}
+

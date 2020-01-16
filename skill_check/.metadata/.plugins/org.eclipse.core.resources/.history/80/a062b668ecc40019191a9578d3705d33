@@ -1,0 +1,16 @@
+package workspace;
+import java.util.*;
+import java.util.stream.IntStream;
+
+public class test {
+	public static String solution(String sentence) {
+		String answer = "";
+//		while(sentence.length()>0) {
+//			
+//		}
+		return sentence.substring(0,1);
+	}
+	public static void main(String [] args) {
+		System.out.println(solution("SpIpGpOpNpGJqOqA"));
+	}
+}

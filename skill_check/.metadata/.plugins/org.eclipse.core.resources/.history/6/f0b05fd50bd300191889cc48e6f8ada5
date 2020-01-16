@@ -1,0 +1,44 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+class Main {
+	static List<Integer> list = new ArrayList<>();
+	static int len;
+	public static boolean isPrime(int input) {
+		for(int i=2; i<(int)Math.sqrt(input)+1; i++) {
+			if( input % i == 0) return false;
+		}
+		return true;
+	}
+	public static int solution(String numbers) {
+        len = numbers.length();
+        Set<Integer> set = new HashSet<>();
+        for(int i=0; i<len; i++) {
+        	list.clear();
+        	list.add(i);
+        	StringBuffer sb = new StringBuffer();
+        	sb.append(numbers.charAt(i));
+        	while(sb.length() != len) {
+        		sb = addMore(sb, numbers);
+        	}
+        	System.out.println(sb);
+        	int mixNum = Integer.parseInt(sb.toString());
+        	if(isPrime(mixNum)) set.add(mixNum);
+        }
+        return set.size();
+    }
+	public static StringBuffer addMore(StringBuffer sb, String numbers) {
+		for(int i=0; i<len; i++) {
+			if(list.indexOf(i) != -1) continue;
+			else {
+				sb.append(numbers.charAt(i));
+				break;
+			}
+		}
+		return sb;
+	}
+	public static void main(String [] args) throws IOException {
+		System.out.println(-2 % 3);
+	}
+}

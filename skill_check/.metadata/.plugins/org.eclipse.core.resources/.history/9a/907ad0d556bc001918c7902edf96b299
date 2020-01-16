@@ -1,0 +1,13 @@
+package workspace;
+import java.util.*;
+public class test {
+	public static String solution(String s) {
+		char [] c= new char [s.length()-4];
+		Arrays.fill(c,'*');
+	    return s.replace(s.substring(0,s.length()-4), Arrays.toString(c));
+	}
+	public static void main(String [] args) {
+		System.out.println(solution("01033334444"));
+		
+	}
+}

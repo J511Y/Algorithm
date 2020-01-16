@@ -1,0 +1,33 @@
+package baekjoon_DFS_BFS;
+import java.util.*;
+public class baekjoon_2606 {
+	static int [][] arr;
+	static boolean [] vst;
+	
+	static int func(int idx) {
+		int sum = 0;
+		vst[idx] = true;
+		for(int i=0; i<arr.length; i++) {
+			if(!vst[i] && arr[idx][i] == 1) {
+				sum++;
+				arr[idx][i] = 0; arr[i][idx] = 0;
+				sum += func(i);
+			}
+		}
+		System.out.println(idx + ", sum->" + sum);
+		return sum;
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt(), m = sc.nextInt();
+		arr = new int [n+1][n+1];
+		vst = new boolean [n+1];
+		for(int i=0; i<m; i++) {
+			int x = sc.nextInt(), y = sc.nextInt();
+			arr[x][y] = 1; arr[y][x] = 1;
+		}
+		System.out.println(func(1));
+
+	}
+
+}

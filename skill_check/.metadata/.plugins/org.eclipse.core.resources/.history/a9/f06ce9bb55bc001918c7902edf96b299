@@ -1,0 +1,16 @@
+package workspace;
+import java.util.*;
+public class test {
+	public static boolean solution(int x) {
+	      int sum = 0;
+	      while(x>0) {
+	    	  sum+=x%10;
+	    	  x/=10;
+	      }
+	      return x%sum==0;
+	  }
+	public static void main(String [] args) {
+		System.out.println(solution(10));
+		
+	}
+}

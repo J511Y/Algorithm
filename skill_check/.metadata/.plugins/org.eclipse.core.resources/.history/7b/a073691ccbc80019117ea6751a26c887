@@ -1,0 +1,37 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+class Main {
+	public static void main(String[] a){
+		Scanner sc = new Scanner(System.in);
+		int N=sc.nextInt(),K=sc.nextInt();
+//		List<Integer> list = new ArrayList<>();
+//		for(int i=1; i<N+1; i++)list.add(i);
+//		int [] result = new int [N];
+//		int cnt=1,k=K-1;
+//		while(!list.isEmpty()) {
+//			k+=K;
+//			if(k>=list.size())k%=list.size();
+//			int i=list.get(k);
+//			result[i-1]=cnt++;
+//			list.remove(k);
+//		}
+//		StringBuffer sb = new StringBuffer("<");
+//		for(int i:result)sb.append(i+", ");
+//		System.out.println(new String(sb).substring(0,sb.length()-2)+">");
+		Queue<Integer> que = new LinkedList<>();
+		for(int i=1; i<N+1; i++)que.add(i);
+		System.out.print("<");
+		while(!que.isEmpty()) {
+			for(int i=0; i<K; i++) {
+				if(i==K)System.out.print(que.poll());
+				else {
+					que.add(que.poll());
+				}
+			}
+			if(que.isEmpty())System.out.print(">");
+			else System.out.print(", ");
+		}
+	}
+}

@@ -1,0 +1,35 @@
+package baekjoon_math;
+import java.util.*;
+public class baekjoon_2839 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		if(n%5 == 0) System.out.println(n/5); //5로 나누어 떨어지면 5로 나눈 몫이 정답
+		else {
+			int x = 0; //0부터 3씩 더해나갈 변수
+			int cnt = 0; //봉지의 갯수
+			boolean fail = true; //while문을 빠져나가고 출력 여부를 결정할 boolean
+			while(x <= n) { // n보다 작을 동안 반복
+				x += 3; // 3씩 계속 더해줌. 생각해보니 반대로 해도 될 듯 함. 그럼 
+				cnt ++;
+				if( (n-x) % 5 == 0) {
+					cnt += (n-x)/5;
+					fail = false;
+					System.out.println(cnt);
+					break;
+				}
+			}
+			if(fail) System.out.println(-1);
+//			while(n > 0) {
+//				n -= 3;
+//				cnt ++;
+//				if( n%5 == 0) {
+//					cnt += n/5;
+//					break;
+//				}
+//			}
+//			System.out.println(n<0?-1:cnt);
+		}
+
+	}
+}

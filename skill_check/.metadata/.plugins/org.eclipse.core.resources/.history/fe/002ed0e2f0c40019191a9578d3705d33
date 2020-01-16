@@ -1,0 +1,83 @@
+package workspace;
+import java.util.*;
+import java.util.stream.IntStream;
+
+public class test {
+	static boolean isCase1(String s) {
+		if(s.length()%2==0)return false;
+		else {
+			String case1 = "";
+			byte [] bArr = s.getBytes();
+			int index=0;
+			for(int i=0; i<bArr.length; i++) {
+				char c = (char)bArr[i];
+				if('a'<= c && c<='z') {
+					case1=c+"";
+					index=i;
+					break;
+				}
+			}
+			while(index<s.length()) {
+				if(((char)bArr[index]+"").trim().equals(case1))index+=2;
+				else return false;
+			}
+			return true;
+		}
+	}
+	static boolean isCase2(String s) {
+		String case2=s.substring(0,1);
+		byte [] bArr = s.getBytes();
+		if(s.startsWith(case2)&&s.endsWith(case2)) {
+			for(int i=1; i<s.length()-1; i++) {
+				char c = (char)bArr[i];
+				if('a'<=c && c<='z') {
+					return isCase1(s.substring(1,s.length()-1));
+				}
+			}			
+		}else {return false;}
+		return true;
+	}
+	public static String solution(String sentence) {
+		String answer = "";
+		while(!sentence.equals("")) {
+			char c = sentence.charAt(0);
+			if('a'<=c && c<='z') {
+				String s = sentence.lastIndexOf(c+"")==sentence.length()?sentence:sentence.substring(0,sentence.lastIndexOf(c+"")+1);
+				System.out.println(s);
+				if(isCase2(s)) {
+					for(byte b : s.getBytes())if('A'<=(char)b &&(char)b<='Z')answer+=(char)b;
+					answer += " ";
+					sentence=sentence.replace(s, "");
+				}
+				else {answer="invalid1";break;}
+			}else {
+				c = sentence.charAt(1);
+				if('a'<=c && c<='z') {
+					try {
+						String s = sentence.lastIndexOf(c+"")==sentence.length()-1?sentence:sentence.substring(0,sentence.lastIndexOf(c+"")+2);
+//						System.out.println(s);
+						if (isCase1(s)) {
+							for (byte b : s.getBytes())
+								if ('A' <= (char) b && (char) b<='Z')
+									answer += (char) b;
+							answer += " ";
+							sentence = sentence.replace(s, "");
+						}else {
+							answer = "invalid2";
+							break;
+						}
+					} catch (Exception e) {
+						answer = "invalid3";
+						break;
+					}
+					;
+				}
+				else {answer="invalid4";break;}
+			}
+		}
+		return answer;
+	}
+	public static void main(String [] args) {
+		System.out.println(solution("HaEaLaLaObWORLDb"));
+	}
+}

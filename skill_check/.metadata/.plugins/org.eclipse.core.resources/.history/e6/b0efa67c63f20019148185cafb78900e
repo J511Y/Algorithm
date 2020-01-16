@@ -1,0 +1,49 @@
+package workspace;
+public class skill_level_3_1 {
+	static int [][] map;
+	static boolean [][] visit;
+	static int [] width = new int [] {1, 0, -1, 0};
+	static int [] height= new int [] {0, 1, 0, -1};
+	public static int[] solution(int m, int n, int[][] picture) {
+		System.out.println(picture.length + ", " + picture[0].length);
+		map = picture;
+		visit = new boolean [m][n];
+		int num = 0;
+		int maxsize = 0;
+		for(int i=0; i<m; i++) {
+			for(int j=0; j<n; j++) {
+				if(map[i][j] != 0) {
+					num++;
+					maxsize = Math.max(maxsize, dfs(picture[i][j], 1, i, j));
+				}
+			}
+		}
+		return new int [] {num, maxsize};
+	}
+	
+	public static int dfs(int target, int sum, int x, int y) {
+		map[x][y] = 0;
+		visit[x][y] = true;
+		for(int i=0; i<4; i++) {
+			int tmpx = x + width[i];
+			int tmpy = y + height[i];
+			if(-1 < tmpx && tmpx < map.length && -1 < tmpy && tmpy < map[0].length) {
+				if(!visit[tmpx][tmpy] && map[tmpx][tmpy] == target) {
+					sum = dfs(target, sum+1, tmpx, tmpy);					
+				}
+			}
+		}
+		return sum;
+	}
+	public static void main(String[] a) {
+		int [] arr = solution(6,4,new int [][] {
+			{1, 1, 1, 0}
+			,{1, 2, 2, 0}
+			,{1, 0, 0, 1}
+			,{0, 0, 0, 1}
+			,{0, 0, 0, 3}
+			,{0, 0, 0, 3}
+	});
+		for(int i : arr) System.out.println(i);
+	}
+}

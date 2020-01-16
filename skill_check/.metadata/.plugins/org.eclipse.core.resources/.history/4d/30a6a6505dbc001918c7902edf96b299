@@ -1,0 +1,22 @@
+package workspace;
+import java.util.*;
+import java.util.stream.IntStream;
+public class test {
+	public static int solution(int num) {
+		int result = 0;
+		long a = num;
+		while(a>1) {
+			if(result==500)return-1;
+			result+=1;
+			if(a%2==0)a/=2;
+			else a=a*3+1;
+		}
+	    return result;
+	}
+	public static void main(String [] args) {
+		long n = 118372;
+		List<IntStream> list= Arrays.asList((n+"").chars());
+		System.out.println(list);
+		
+	}
+}

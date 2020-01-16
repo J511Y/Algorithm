@@ -1,0 +1,81 @@
+import java.util.*;
+class Main {
+	static int M, N;
+	static byte[][] arr;
+    int delete(List<int[]> list){
+    	System.out.println("============delete begin=============");
+    	for(byte[] barr : arr) {
+        	for(byte b : barr) {
+        		System.out.print((char)b+" ");
+        	}
+        	System.out.println();
+        }
+        int cnt = 0;
+        for(int[] pos : list) {
+            if(arr[pos[0]][pos[1]] != '.'){
+                arr[pos[0]][pos[1]] = '.';
+                cnt++;
+            }
+        }
+        for(int i = 0; i < N; i++){
+            int top = -1, len = -1;
+            for(int j = M - 1; j >= 0; j--){
+                if(arr[j][i] == '.' && top == -1) top = j;
+                if(arr[j][i] != '.' && top != -1){
+                    len = j - top; break;
+                }
+            }
+            System.out.println(top+", "+len);
+            while(top != -1 && len != -1 && top - len >= 0){
+            	System.out.println(top);
+                arr[top][i] = arr[top - len][i];
+                arr[top - len][i] = '.';
+                top--;
+            }
+        }
+        System.out.println("============배치 변경 후=============");
+        for(byte[] barr : arr) {
+        	for(byte b : barr) {
+        		System.out.print((char)b+" ");
+        	}
+        	System.out.println();
+        }
+        System.out.println("============delete end=============");
+        return cnt;
+    }
+    List<int[]> blockChk(){
+        List<int[]> list = new ArrayList<>();
+        for(int i = 0; i < M - 1; i++){
+            for(int j = 0; j < N - 1; j++){
+                boolean chk1 = arr[i][j] == arr[i+1][j];
+                boolean chk2 = arr[i][j] == arr[i][j+1];
+                boolean chk3 = arr[i][j] == arr[i+1][j+1];
+                if(chk1 && chk2 && chk3){
+                    list.add(new int [] {i, j});
+                    list.add(new int [] {i+1, j});
+                    list.add(new int [] {i, j+1});
+                    list.add(new int [] {i+1, j+1});
+                }
+            }
+        }
+        return list;
+    }
+    public int solution(int m, int n, String[] board) {
+        M = m; N = n;
+        int answer = 0;
+        arr = new byte[board.length][];
+        for(int i = 0; i < board.length; i++) arr[i] = board[i].getBytes();
+//        while(true){
+            List<int[]> list = blockChk();
+//            System.out.println(list.toString());
+//            if(list.size() == 0) break;
+            answer += delete(list);
+//        }
+        
+        return answer;
+    }
+	public static void main(String[] args) {
+		Main m = new Main();
+		System.out.println(m.solution(4, 5, new String[] {"CCBDE", "AAADE", "AAABF", "CCBBF"}));
+	}
+}

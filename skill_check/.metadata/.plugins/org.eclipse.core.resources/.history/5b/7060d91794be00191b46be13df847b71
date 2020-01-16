@@ -1,0 +1,19 @@
+package workspace;
+import java.util.*;
+import java.util.stream.IntStream;
+
+public class test {
+	public static String solution(int n) {
+	      String answer = "";
+	      int limit = 0;
+	      while(n>0) {
+	    	  limit+=1;
+	    	  n/=3;
+	      }
+	      System.out.println(limit);
+	      return answer;
+	  }
+	public static void main(String [] args) {
+		System.out.println(solution(11));
+	}
+}

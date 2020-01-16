@@ -1,0 +1,70 @@
+package baekjoon_bitmask;
+
+import java.util.*;
+
+/*
+ * 백준_2800_괄호제거
+ * 
+ * 괄호를 제거해서 나올 수 있는 서로 다른 식의 개수를 계산하는 프로그램을 작성.
+ * 괄호를 제거할 때는, 항상 쌍이 되는 괄호끼리 제거.
+ * 
+ * 숫자, '+', '*', '-', '/', '(', ')'로만 이루어져 있음.
+ * 괄호 쌍은 적어도 1개, 많아야 10개.
+ * 올바른 괄호 쌍을 제거해서 나올 수 있는 서로 다른 식을 사전 순으로 출력.
+ * 
+ * (0/(0))
+ * --------
+ * (0/0)
+ * 0/(0)
+ * 0/0
+ */
+public class baekjoon_2800 {
+   static Set<String> set = new HashSet<>();
+    static int[] brac;
+    static int last;
+    static void func(StringBuffer sb, int bit, int layer, int idx, int val){
+//    	System.out.println("sb:" + sb.toString() + ", bit:" + bit + ", layer:" + layer + ", idx:" + idx + ", val:" + val);
+        if(val > last || idx >= sb.length()) {
+//        	System.out.println(sb.toString());
+           if(bit != 0) set.add(new String(sb).replace(".", "")); 
+           return;
+        }
+        for(; idx < sb.length(); idx++){
+            if(brac[idx] == val){
+//            	System.out.println("위:" +sb.toString());
+               func(new StringBuffer(sb), bit, layer + 1, idx+1, val + 1);
+               break;
+            }
+        }
+        for(int i=idx; i < sb.length(); i++) {
+           if(brac[i] == val) sb.replace(i, i+1, ".");
+        }
+//        System.out.println("밑:" +sb.toString());
+        func(new StringBuffer(sb), (bit | (1 << layer)), layer + 1, idx + 1, val + 1);
+    }
+    
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        brac = new int [s.length()];
+        Stack<Integer> stack = new Stack<>();
+        int i = 1, idx = 0;
+        for(byte b : s.getBytes()){
+            if(b == '(') {
+                stack.push(i);
+                brac[idx] = i++;
+            }else if (b == ')'){
+                brac[idx] = stack.pop();
+            }
+            idx++;
+        }
+        last = i - 1;
+        for(int x : brac) System.out.print(x+" ");
+        System.out.println();
+        StringBuffer sb = new StringBuffer(s);
+        
+        func(sb, 0, 0, 0, 1); // 문자열, 저장비트, 계층, 인덱스
+        
+//        set.stream().sorted().forEachOrdered(x -> System.out.println(x));
+    }
+}

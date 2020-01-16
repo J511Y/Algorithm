@@ -1,0 +1,27 @@
+import java.util.*;
+class Main {
+	static int gcd(int a,int b) {
+		if(b == 0) return a;
+		return gcd(b, a % b);
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = "a b  cd  ";
+		StringBuffer sb = new StringBuffer();
+		boolean first = true;
+		for(char c : s.toCharArray()) {
+			if(c == ' ') {
+				sb.append(" ");
+				first = true;
+			}else {
+				if(first) {
+					sb.append((c+"").toUpperCase());
+					first = false;
+				}else {
+					sb.append((c+"").toLowerCase());
+				}
+			}
+		}
+		System.out.println(sb.toString());
+	}
+}

@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\user\git\Algorithm\skill_check\.metadata\.plugins\org.eclipse.jdt.core
+725555719.index
+2158312854.index

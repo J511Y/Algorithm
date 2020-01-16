@@ -1,0 +1,22 @@
+package workspace;
+
+import java.util.List;
+import java.util.stream.IntStream;
+
+class Solution{
+	public String solution(int n) {
+	      String answer = "";
+	      int [] num = new int []{4,1,2};
+	      
+	      return answer;
+	  }
+}
+public class skill_check1 {
+	public static void main(String[] args) {
+		Solution s = new Solution();
+		System.out.println(Math.sqrt(500000000));
+//		System.out.println(s.solution(16));
+
+	}
+
+}

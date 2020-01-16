@@ -1,0 +1,14 @@
+package workspace;
+import java.util.*;
+import java.util.stream.IntStream;
+public class test {
+	public static String solution(int[] numbers) {
+        String answer = "";
+        Arrays.parallelSort(numbers);
+        System.out.println(numbers);
+        return answer;
+    }
+	public static void main(String [] args) {
+		System.out.println(solution(new int [] {3, 30, 34, 5, 9}));
+	}
+}

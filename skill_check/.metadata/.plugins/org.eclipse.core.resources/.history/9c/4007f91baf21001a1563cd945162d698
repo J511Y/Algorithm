@@ -1,0 +1,121 @@
+import java.util.*;
+class Pos{
+	int x;
+	int y;
+	Pos(int x, int y){ this.x = x; this.y = y;}
+}
+public class Main {
+	static Scanner sc = new Scanner(System.in);
+	static char white = '●', black = '○', empty = '┼';
+	static char[][] board;
+	static int board_size = 8;
+	static int now_turn = 1; // 1 = white, -1 = black;
+	static int[][] wh = new int [][]{{0, 1, 1, 1, 0, -1, -1, -1}, {1, 1, 0, -1, -1, -1, 0, 1}}; // 동쪽부터 시계방향
+	
+	static void boardSetting() {
+		board = new char[board_size][board_size];
+		for(char[] carr : board) Arrays.fill(carr, empty);
+		board[3][3] = board[4][4] = black;
+		board[3][4] = board[4][3] = white;
+	}
+	
+	static void boardPrint() {
+		for(char[] carr : board) {
+			for(char c : carr) System.out.print(c+" ");
+			System.out.println();
+		}
+	}
+
+	static void gameStart() {
+		int turn = 60, black_cnt = 2, white_cnt = 2;
+		boardSetting();
+		while(turn--> 0 || black_cnt == 0 || white_cnt == 0) {
+			boardPrint();
+			Pos pos = getPos();
+			int cnt = setPos(pos);
+			if(now_turn == 1) white_cnt += cnt;
+			else black_cnt += cnt;
+			now_turn *= -1;
+		}
+	}
+	
+	static Pos getPos() {
+		System.out.println("좌표를 입력해주세요.");
+		Pos pos = null;
+		while(pos == null || !canPos(pos)) {
+			int x = sc.nextInt();
+			int y = sc.nextInt();
+			pos = new Pos(x, y);
+		}
+		return pos;
+	}
+
+	static int setPos(Pos pos) {
+		System.out.println("setPos");
+		board[pos.x][pos.y] = now_turn == 1 ? black : white;
+		int cnt = checkUpdate(pos);
+		execUpdate(pos);
+		
+		return cnt;
+	}
+	
+	static boolean canPos(Pos pos) {
+		System.out.println("canPos");
+		if(board[pos.x][pos.y] != empty) return false;
+		if(checkUpdate(pos) == 0) return false;
+		return true;
+	}
+	
+	static int checkUpdate(Pos pos) {
+		char other = now_turn == 1 ? white : black;
+		char me = now_turn == 1 ? black : white;
+		int cnt = 0;
+		for(int i = 0; i < 8; i++) {
+			int x = pos.x, y = pos.y, tmp = 0;
+			while(board[x + wh[0][i]][y + wh[1][i]] != me) {
+				if(board[x + wh[0][i]][y + wh[1][i]] != other) {
+					tmp = 0;
+					break;
+				}
+				tmp++;
+				x += wh[0][i]; y += wh[1][i];
+			}
+			cnt += tmp;
+		}
+		System.out.println("chkUpdate:cnt = " + cnt);
+		return cnt;
+	}
+	
+	static void execUpdate(Pos pos) {
+		System.out.println("execUpdate");
+		char other = now_turn == 1 ? white : black;
+		char me = now_turn == 1 ? black : white;
+		for(int i = 0; i < 8; i++) {
+			int x = pos.x, y = pos.y;
+			Stack<Pos> stack = new Stack<>();
+			while(board[x + wh[0][i]][y + wh[1][i]] == me) {
+				if(board[x + wh[0][i]][y + wh[1][i]] != other) {
+					stack = new Stack<>(); break;
+				}
+				x += wh[0][i]; y += wh[1][i];
+				stack.push(new Pos(x, y));
+			}
+			while(stack.size() > 0) {
+				Pos p = stack.pop();
+				board[p.x][p.y] = now_turn == 1 ? black : white;
+			}
+		}
+	}
+	public static void main(String[] args) {
+		do {
+			gameStart();
+		}while(sc.next().equalsIgnoreCase("y"));
+		
+		for(int i = 0; i < board.length; i++) {
+			for(int j = 0; j < board.length; j++) {
+				
+			}
+		}
+	}
+}
+

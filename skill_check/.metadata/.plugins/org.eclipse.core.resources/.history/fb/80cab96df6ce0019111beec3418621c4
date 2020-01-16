@@ -1,0 +1,11 @@
+package workspace;
+import java.util.*;
+
+public class baekjoon_5586 {
+
+	public static void main(String[] args) {
+		String s = "JOIOIOIOI";
+		System.out.println(s.split("IOI").length);
+	}
+
+}

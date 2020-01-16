@@ -1,0 +1,17 @@
+package baekjoon_string;
+import java.util.*;
+public class baekjoon_10546 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		Map<String, Boolean> map = new HashMap<>();
+		for(int i = 0; i < n; i++) map.put(sc.next(), true);
+		for(int i = 0; i < n - 1; i++) map.put(sc.next(), false);
+		for(String s : map.keySet()) {
+			if(map.get(s)) {
+				System.out.println(s);
+				return;
+			}
+		}
+	}
+}

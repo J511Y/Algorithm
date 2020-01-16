@@ -1,0 +1,13 @@
+package workspace;
+
+import java.io.*;
+import java.util.*;
+public class Main {
+	public static void main(String[] args) throws Exception{
+		Scanner sc = new Scanner(System.in);
+		Date date = new Date();
+		date.setHours(sc.nextInt());
+		date.setMinutes(sc.nextInt());
+		System.out.println(date);
+	}
+}

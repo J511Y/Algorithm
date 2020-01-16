@@ -1,0 +1,38 @@
+package baekjoon_DP;
+import java.util.*;
+public class baekjoon_1932 {
+	static int[][] val;
+	public static void func(int[][] tri, int x) {
+		if(x==val.length-1) return;
+		for(int i=0; i<val[x].length; i++) {
+			int j=tri[x+1][i], k=tri[x+1][i+1];
+			val[x+1][i] = Math.max(val[x][i] + j, val[x+1][i]);
+			val[x+1][i+1] = val[x][i] + k;
+		}
+		System.out.print(x + "로 들어왔을 때 : ");
+		for(int i : val[x+1])System.out.print(i + "\t");
+		System.out.println();
+		func(tri, x+1);
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int [][]tri = new int [n][];
+		val = new int [n][];
+		for(int i=0; i<n; i++) {
+			int [] arr = new int [i+1];
+			val[i] = arr;
+			for(int j=0; j<i+1; j++) {
+				arr[j] = sc.nextInt();
+			}
+			tri[i] = arr;
+		}
+		val[0][0] = tri[0][0];
+		func(tri, 0);
+		System.out.println(Arrays.stream(val[n-1]).max().getAsInt());
+		for(int i=0; i<tri.length; i++) {
+			for(int j=0; j<tri[i].length; j++)System.out.print(tri[i][j]+"\t");
+			System.out.println();
+		}
+	}
+}

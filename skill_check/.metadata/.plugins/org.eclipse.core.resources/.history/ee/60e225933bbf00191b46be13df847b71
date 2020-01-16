@@ -1,0 +1,12 @@
+package workspace;
+
+import java.io.*;
+import java.util.*;
+public class Main {
+	public static void main(String[] args) throws Exception{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		List<String> arr = Arrays.asList(br.readLine().split(" "));
+		arr.sort(null);
+		System.out.println(arr);
+	}
+}

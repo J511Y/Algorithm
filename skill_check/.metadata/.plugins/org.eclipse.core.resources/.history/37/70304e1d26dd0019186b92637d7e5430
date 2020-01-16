@@ -1,0 +1,23 @@
+package baekjoon_DP;
+import java.util.*;
+public class baekjoon_12865 {
+	public static int func(int[][] items, int[][] dp, int pos, int max_W) {
+		if (pos == items.length) return 0;
+		int val = dp[pos][max_W];
+		if(val != -1) return val;
+		if(items[pos][1] <= max_W) {
+			val = items[pos][1] + func(items, dp, pos+1, max_W - items[pos][1]);
+		}
+		val = Math.max(val, func(items, dp, pos+1, max_W));
+		return dp[pos][max_W]=val;
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int [][] items = new int [sc.nextInt()][2];
+		int max_W = sc.nextInt();
+		int [][] dp = new int [items.length][max_W];
+		for(int i=0; i<dp.length; i++) Arrays.fill(dp[i], -1);
+		System.out.println(func(items, dp, 0, max_W));
+
+	}
+}

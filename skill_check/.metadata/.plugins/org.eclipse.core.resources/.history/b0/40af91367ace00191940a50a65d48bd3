@@ -1,0 +1,36 @@
+package workspace;
+import java.util.*;
+import java.io.*;
+public class baekjoon_1764 {
+	public static void main(String[] args) throws Exception{
+		//첫번째 시도. 알고리즘은 맞는 듯 하나 시간초과 발생.
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		List<String> list1 = new ArrayList<>();
+//		List<String> list2 = new ArrayList<>();
+//		String [] arr = br.readLine().split(" ");
+//		for(int i=0; i<Integer.parseInt(arr[0]); i++) list1.add(br.readLine());
+//		for(int i=0; i<Integer.parseInt(arr[1]); i++) {
+//			String s = br.readLine();
+//			if(list1.contains(s)) list2.add(s);
+//		}
+//		list2.sort(null);
+//		for(String s : list2) System.out.println(s);
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Set<String> set = new HashSet<>();
+		List<String> list = new ArrayList<>();
+		String [] arr = br.readLine().split(" ");
+		for(int i=0; i<Integer.parseInt(arr[0]); i++) set.add(br.readLine());
+		for(int i=0; i<Integer.parseInt(arr[1]); i++) {
+			String s = br.readLine();
+			if(set.contains(s)) list.add(s);
+		}
+		list.sort(new Comparator<String>() {
+			@Override
+			public int compare(String o1, String o2) {
+				return o1.compareTo(o2);
+			}
+		});
+		for(String s : list)System.out.println(s);
+	}
+}

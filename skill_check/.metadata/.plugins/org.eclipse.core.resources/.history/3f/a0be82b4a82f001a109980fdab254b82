@@ -1,0 +1,19 @@
+package baekjoon_string;
+import java.util.*;
+public class baekjoon_5211 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String scale = sc.next();
+		int major = 0, minor = 0, k = 0;
+		for(String s : scale.split("|")) {
+			char c = s.charAt(0);
+			if(c == 'C' || c == 'F' || c == 'G') {
+				major++; k = 1;
+			}
+			else if(c == 'A' || c == 'D' || c == 'E') {
+				minor++; k = 0;
+			}
+		}
+		System.out.println(major > minor ? "C-major" : major < minor ? "A-minor" : k == 1 ? "C-major" : "A-minor");
+	}
+}

@@ -1,0 +1,20 @@
+package workspace;
+import java.util.*;
+public class baekjoon_11568 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int rnd = sc.nextInt();
+		String [] arr = new String [rnd];
+		for(int i=0; i<rnd; i++) arr[i]=sc.next(); //ют╥б
+		int K = sc.nextInt();
+		int i=0, n=1;
+		if (K==3) {
+			i += rnd-1;
+			n *= -1;
+		}
+		for(; 0<=i && i<rnd; i += n) {
+			if(K==2) System.out.println(new StringBuffer(arr[i]).reverse());
+			else System.out.println(arr[i]);
+		}
+	}
+}

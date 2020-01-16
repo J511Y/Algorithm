@@ -1,0 +1,13 @@
+package workspace;
+import java.util.*;
+public class baekjoon_5598 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = "";
+		for(byte b : sc.next().getBytes()) {
+			char c = b<'D'?(char)(b+23):(char)(b-3);
+			s+=c;
+		}
+		System.out.println(s);
+	}
+}

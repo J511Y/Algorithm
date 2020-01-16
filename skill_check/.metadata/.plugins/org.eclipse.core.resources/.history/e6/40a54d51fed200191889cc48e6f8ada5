@@ -1,0 +1,22 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+class Main {
+	public static int solution(String dirs) {
+        int x=0, y=0;
+        Set<String> set = new HashSet<>();
+        for(byte b : dirs.getBytes()) {
+        	switch((char)b) {
+        	case 'U':if(y == 5) break; set.add(x+""+y+"->"+x+""+(y+1)); y++; break;
+        	case 'D':if(y ==-5) break; set.add(x+""+(y-1)+"->"+x+""+y); y--; break;
+        	case 'R':if(x == 5) break; set.add(x+""+y+"->"+(x+1)+""+y); x++; break;
+        	case 'L':if(x ==-5) break; set.add((x-1)+""+y+"->"+x+""+y); x--; break;
+        	}
+        }
+        return set.size();
+    }
+	public static void main(String [] args) {
+		System.out.println(solution("LULLLLLLU"));
+	}
+}

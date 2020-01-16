@@ -1,0 +1,16 @@
+package workspace;
+
+import java.io.*;
+import java.util.*;
+class Test{
+	long sum(int[]a) {
+		return (long)Arrays.stream(a).sum();
+	}
+}
+public class Main {
+	public static void main(String[] args) throws Exception {
+		Test t = new Test();
+		System.out.println(t.sum(new int [] {1,2,3,4,5,6,7,8,9,45678,79,845,6,521,3,5456,74,87489,49,415,641,564,49,4,516,156,14654,9874,89789,7894,5645674,87897894,564487746,41564165,4567465,416541,65745489,498}));
+	}
+	
+}

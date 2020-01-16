@@ -1,0 +1,25 @@
+package workspace;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+		Scanner sc = new Scanner(System.in);
+		List<Integer> list = new ArrayList<>();
+		boolean mixed = false;
+		boolean asc = false;
+		boolean desc = false;
+		for(int i=1; i<8; i++) {
+			int input = sc.nextInt();
+			list.add(input);
+			if(i==input)asc=true; else asc=false;
+			if(9-i==input)desc=true; else desc=false;
+			if(i!=input && 9-i != input)mixed=true;
+		}
+		if(mixed)System.out.println("mixed");
+		if(asc)System.out.println("ascending");
+		if(desc)System.out.println("descending");
+		
+	}
+}

@@ -1,0 +1,19 @@
+package workspace.baekjoon;
+import java.util.*;
+public class baekjoon_1543 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String docu = sc.nextLine();
+		String word = sc.nextLine();
+		int cnt = 0;
+		int len = word.length();
+		for(int i=0; i<docu.length() - len; i++) {
+			if(docu.substring(i,i+len).equals(word)) {
+				cnt++;
+				i += len;
+			}
+		}
+		System.out.println(cnt);
+	}
+}

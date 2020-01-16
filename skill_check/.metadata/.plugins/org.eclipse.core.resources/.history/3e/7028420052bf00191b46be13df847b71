@@ -1,0 +1,27 @@
+package workspace;
+
+import java.io.*;
+import java.util.*;
+public class Main {
+	public static int func(int a) {
+		String s = a+"";
+		for(byte b : s.getBytes())a+=Integer.parseInt((char)b+"");
+		return a;
+	}
+	public static void main(String[] args) throws Exception {
+		int [] arr = new int [10000];
+		boolean [] barr = new boolean[10000];
+		for(int i=1; i<=arr.length; i++) {
+			arr[i-1]=i;
+			try {
+				barr[func(i)-1]=true;				
+			}catch(Exception e) {}
+		}
+		for(int i=0; i<arr.length; i++) {
+			if(!barr[i])System.out.println(arr[i]);
+		}
+//		System.out.println(func(39));
+		
+	}
+	
+}

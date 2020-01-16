@@ -1,0 +1,11 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+class Main {
+	public static void main(String[] a) throws IOException{
+		List<Integer> list = new LinkedList<>();
+		for(int i=1; i<10; i++)list.add(i);
+		System.out.println(list);
+	}
+}

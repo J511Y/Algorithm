@@ -1,0 +1,11 @@
+package baekjoon_tree;
+import java.util.*;
+public class baekjoon_6118 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[][] arr = new int[20001][20001];
+		while(sc.hasNextInt()) {
+			
+		}
+	}
+}

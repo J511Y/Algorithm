@@ -1,0 +1,36 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.Collectors;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int r = sc.nextInt();
+        for(int i=0; i<r; i++) {
+        	int M=sc.nextInt(),N=sc.nextInt(),x=sc.nextInt(),y=sc.nextInt();
+        	int a=0,b=0,cnt=0;
+        	boolean find = false;
+        	while(!(a==M&&b==N)) {
+        		if(a<M)a++;
+        		else a=1;
+        		if(b<N)b++;
+        		else b=1;
+        		cnt++;
+        		if(a==x&&b==y) {
+        			find=true;
+        			break;
+        		}
+        	}
+        	if(find)System.out.println(cnt);
+        	else System.out.println(-1);
+        }
+    }
+}
+/*
+ * 1 2  3  4   5   6   7   8   9
+ * 1 3  6  10 15  21  28  36  45
+ * 1 4 10  20 35  56  84 120 165
+ * 1 5 15  35 70 126 210 330 395  
+
+*
+*/

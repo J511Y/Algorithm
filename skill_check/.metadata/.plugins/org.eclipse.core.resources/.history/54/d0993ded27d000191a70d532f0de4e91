@@ -1,0 +1,12 @@
+package workspace;
+import java.util.*;
+public class baekjoon_2998 {
+
+	public static void main(String[] args) {
+		String s = new Scanner(System.in).next();
+		String s1 = Integer.toHexString(Integer.parseInt(Integer.toBinaryString(Integer.parseInt(s))));
+		System.out.println(s1);
+		System.out.printf("%o",Integer.parseInt(s));
+	}
+
+}

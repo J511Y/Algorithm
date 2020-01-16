@@ -1,0 +1,11 @@
+package workspace;
+import java.util.*;
+public class test {
+	public static String solution(String s) {
+	    return s.replace(s.substring(0,s.length()-4),"*".repeat(s.length()-4));
+	}
+	public static void main(String [] args) {
+		System.out.println(solution("01033334444"));
+		
+	}
+}

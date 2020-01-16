@@ -1,0 +1,20 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+class Main {
+	public static int solution(String skill, String[] skill_trees) {
+        int answer = 0;
+        for(String skill_tree : skill_trees) {
+        	StringBuffer sb = new StringBuffer();
+        	for(byte b : skill_tree.getBytes()) {
+        		if(skill.indexOf((char)b) != -1 )sb.append((char)b);
+        	}
+        	if(skill.equals(sb.toString())) answer++;
+        }
+        return answer;
+    }
+	public static void main(String [] args) {
+		System.out.println(solution("CBD",new String [] {"BACDE", "CBADF", "AECB", "BDA"}));
+	}
+}

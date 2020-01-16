@@ -1,0 +1,12 @@
+package workspace;
+import java.util.*;
+public class baekjoon_5598 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String camb = "CAMBRIDGE";
+		for(byte b : sc.next().getBytes()) {
+			char c = (char)b;
+			if(camb.indexOf(c) != -1)System.out.print(c);
+		}
+	}
+}

@@ -1,0 +1,28 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+class Main {
+	public static long solution(int N) {
+        long answer = 0;
+        if(N==1)return 4;
+        else if(N==2)return 6;
+        else {
+        	int a=1,b=1;
+        	for(int i=0; i<N; i++) {
+        		int c=b;
+        		b+=a;
+        		a=c;
+        	}
+        	System.out.println(a+","+b);
+        }
+        return answer;
+    }
+	public static void main(String[] a){
+		System.out.println(solution(1));
+		System.out.println(solution(2));
+		System.out.println(solution(5));
+		System.out.println(solution(6));
+		System.out.println(solution(7));
+	}
+}

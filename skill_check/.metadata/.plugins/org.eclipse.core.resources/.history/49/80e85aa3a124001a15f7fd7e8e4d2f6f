@@ -1,0 +1,32 @@
+import java.util.*;
+class Main {
+	static List<Integer> yaksu(int n){
+		List<Integer> list = new ArrayList<>();
+		int sum = 1;
+		list.add(1);
+		for(int i = 2; i < (int)Math.sqrt(n) + 1; i++) {
+			if(n % i == 0) {
+				list.add(i); sum += i;
+				list.add(n / i); sum += n / i;
+			}
+		}
+		return sum == n ? list : null;
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = -1;
+		List<Integer> list = new ArrayList<>();
+		while((n = sc.nextInt()) != -1) {
+			list = yaksu(n);
+			if(list == null) {
+				System.out.println(n+" is NOT perfect.");
+			}else {
+				System.out.print(n+" = ");
+				int size = list.size();
+				for(int i = 0; i < size; i++) {
+					System.out.print(list.get(i) + i == size - 1 ? "" : " + ");
+				}
+			}
+		}
+	}
+}

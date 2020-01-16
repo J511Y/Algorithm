@@ -1,0 +1,16 @@
+package workspace.baekjoon;
+import java.util.*;
+public class baekjoon_1543 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String docu = sc.nextLine();
+		String word = sc.nextLine();
+		int cnt = 0;
+		while(docu.contains(word)) {
+			cnt++;
+			docu = docu.replaceFirst(word, "");
+		}
+		System.out.println(cnt);
+	}
+}

@@ -1,0 +1,28 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+class Main {
+	/*
+	 * 설명이 들어가는지 확인하는 주석
+	 */
+	public static void antSeq(int n, int x) {
+		if(n==0) return;
+		byte [] bArr = (x+"").getBytes();
+		int [] iArr = new int [4];
+		for(int i=0; i<bArr.length; i++)
+			iArr[bArr[i]-'0']++;
+		x = 0;
+		for(int i=1; i<4; i++) {
+			if(iArr[i] == 0) continue;
+			x *= 10; x += i;
+			x *= 10; x += iArr[i];
+		}
+		System.out.println(x);
+		antSeq(n-1, x);
+	}
+	public static void main(String [] args) throws IOException {
+		antSeq(5, 1);
+		
+	}
+}

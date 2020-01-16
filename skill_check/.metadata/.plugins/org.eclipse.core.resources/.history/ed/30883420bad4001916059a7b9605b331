@@ -1,0 +1,26 @@
+package baekjoon_math;
+import java.util.*;
+public class baekjoon_1016 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		long min = sc.nextLong();
+		long max = sc.nextLong();
+		List<Integer> list = new ArrayList<>();
+		Map<Long,Boolean> map = new HashMap<>();
+		for(int i=2; i<max; i++) {
+			if(Math.pow(i, 2) <= max/2) list.add((int)Math.pow(i, 2));
+			else break;
+		}
+		for(int i=0; i<list.size(); i++) {
+			int mul = 1;
+			long pow = list.get(i);
+			while(true) {
+				long val = pow * mul;
+				if(val > max) break;
+				if(min <= val && val <= max)map.put(val, true);
+				mul++;
+			}
+		}
+		System.out.println(max-min-map.keySet().size());
+	}
+}

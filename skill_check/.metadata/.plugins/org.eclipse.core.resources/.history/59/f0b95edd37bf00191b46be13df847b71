@@ -1,0 +1,18 @@
+package workspace;
+
+import java.io.*;
+import java.util.*;
+public class Main {
+	public static void main(String[] args) throws Exception{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int a = Integer.parseInt(br.readLine());
+		String b = br.readLine();
+		List<Integer> list = new ArrayList<>();
+		list.add(a*Integer.parseInt(b));
+		for(byte bb : b.getBytes()) {
+			list.add(a*(char)bb);
+		}
+		for(int i : list)System.out.println(i);
+		
+	}
+}

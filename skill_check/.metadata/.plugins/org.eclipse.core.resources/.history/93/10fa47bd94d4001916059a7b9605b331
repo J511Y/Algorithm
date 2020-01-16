@@ -1,0 +1,22 @@
+package baekjoon_math;
+import java.util.*;
+public class baekjoon_2839 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		if(n%5 == 0) System.out.println(n/5); //5·Î ³ª´©¾î ¶³¾îÁö¸é 5·Î ³ª´« ¸òÀÌ Á¤´ä
+		else {
+			int cnt = 0;
+			while(n > 0) {
+				n -= 3;
+				cnt ++;
+				if( n%5 == 0) {
+					cnt += n/5;
+					break;
+				}
+			}
+			System.out.println(n<0?-1:cnt);
+		}
+
+	}
+}

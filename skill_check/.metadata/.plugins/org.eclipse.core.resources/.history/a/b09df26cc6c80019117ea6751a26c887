@@ -1,0 +1,22 @@
+package workspace;
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+class Main {
+	public static void main(String[] a){
+		Scanner sc = new Scanner(System.in);
+		int N=sc.nextInt(),K=sc.nextInt();
+		List<Integer> list = new LinkedList<>();
+		for(int i=1; i<N+1; i++)list.add(i);
+		int [] result = new int [N];
+		while(!list.isEmpty()) {
+			if(K>list.size())K-=list.size();
+			int i=list.get(K-1);
+			result[i]=N--;
+			list.remove(i);
+		}
+		System.out.print("<");
+		for(int i:result)System.out.print(i+", ");
+		System.out.print(">");
+	}
+}

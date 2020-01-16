@@ -1,0 +1,21 @@
+import java.util.*;
+public class Main {
+	static long cnt = 0;
+	static long[] val;
+	public static long fibo(int n) {
+		if(n < 2) return n;
+		int a = 0, b = 1;
+		for(int i = 2; i <= n; i++) {
+			int tmp = a + b;
+			a = b;
+			b = tmp;
+		}
+		return b;
+	}
+	public static void main(String[] args) {
+		val = new long[91];
+		System.out.println("결과값:" + fibo(10));
+		System.out.println("호출횟수:" + cnt);
+		int[][] arr = new int [100000][100000];
+	}
+}

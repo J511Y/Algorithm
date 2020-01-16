@@ -1,0 +1,20 @@
+import java.util.*;
+class Main {
+	static long mod(byte[] arr, long p) {
+		long ret = 0;
+		for (int i = 0; i < arr.length; i++) ret = (ret*10 + (arr[i]-'0')) % p;
+		return ret;
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		byte[] arr = sc.next().getBytes();
+		int k = sc.nextInt();
+		for(long i = 2; i < Math.pow(10, 6); i++) {
+			if(mod(arr, i) == 0) {
+				if(i >= k) System.out.println("GOOD");
+				else System.out.println("BAD "+i);
+				break;
+			}
+		}
+	}
+}

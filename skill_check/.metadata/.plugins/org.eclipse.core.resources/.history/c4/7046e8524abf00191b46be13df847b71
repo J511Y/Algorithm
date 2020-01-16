@@ -1,0 +1,16 @@
+package workspace;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+		Scanner sc = new Scanner(System.in);
+		int [] result = new int [10];
+		String input = sc.nextInt()*sc.nextInt()*sc.nextInt()+"";
+		for(byte b : input.getBytes()) {
+			result[Integer.parseInt((char)b+"")]+=1;
+		}
+		for(int i : result)System.out.println(i);
+	}
+}

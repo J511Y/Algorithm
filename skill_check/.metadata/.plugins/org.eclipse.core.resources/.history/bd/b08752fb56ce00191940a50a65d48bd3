@@ -1,0 +1,14 @@
+package workspace;
+import java.util.*;
+class algo_study_week2 {
+	public static void main(String[] a) {
+		Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        String boom = sc.next();
+        while(str.contains(boom)){
+            str = str.replace(boom,"");
+        }
+        if(str.equals(""))System.out.println("FRULA");
+        else System.out.println(str);
+	}
+}

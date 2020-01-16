@@ -1,0 +1,8 @@
+import java.util.*;
+class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int x = sc.nextInt(), y = sc.nextInt(), cha = y - x, sqrt = (int)Math.sqrt(cha);
+		System.out.println(sqrt * 2  - (sqrt * sqrt == cha ? 1 : 0));
+	}
+}
