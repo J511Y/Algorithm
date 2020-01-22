@@ -1,33 +1,29 @@
 package baekjoon_math2;
 import java.util.*;
 public class baekjoon_9020 {
-	static List<Integer> list;
-	public static boolean isPrime(int n) {
-		for(int i=3; i<Math.sqrt(n)+1; i++)
-			if(n%i == 0) return false;
+	static boolean[] prime = new boolean [10001];
+	public static boolean isPrime(int x) {
+		for(int i=2; i<(int)Math.sqrt(x) + 1; i++)
+			if(x % i == 0) return false;
 		return true;
 	}
-	
+	static {
+		for(int i=2; i<10001; i++) prime[i] = isPrime(i);
+	}
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int rnd = sc.nextInt();
-		while(rnd-->0) {
-			list = new ArrayList<>();
-			int n = sc.nextInt();
-			for(int i=2; i<n; i++)
-				if(isPrime(i)) list.add(i);
-			int maxIdx = list.size() / 2;
-			int minIdx = list.size() / 2;
-			int max = list.get(maxIdx);
-			int min = list.get(minIdx);
-			while(max + min != n) {
-				if(max + min > n) {
-					if (minIdx > 0) min = list.get(--minIdx);
-					else max = list.get(--maxIdx);
+		int n = sc.nextInt();
+		for(int i=0; i<n; i++) {
+			int target = sc.nextInt();
+			int min = target/2;
+			while(min > 0) {
+				int max = target - min;
+				if(prime[min] && prime[max]) {
+					System.out.println(min + " " + max);
+					break;
 				}
-				else max = list.get(++maxIdx);
+				min--;
 			}
-			System.out.println(min + " " + max);
 		}
 	}
 }
