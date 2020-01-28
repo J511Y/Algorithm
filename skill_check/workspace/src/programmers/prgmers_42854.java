@@ -1,4 +1,4 @@
-package programmers_stack_queue;
+package programmers;
 import java.util.*;
 /*
  * 이 문제도 스택을 몰랐던 때라서 반복문으로 풀었습니다.

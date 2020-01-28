@@ -1,4 +1,4 @@
-package programmers_stack_queue;
+package programmers;
 import java.util.*;
 public class prgmers_42586 {
 	public static int[] solution(int[] progresses, int[] speeds) {

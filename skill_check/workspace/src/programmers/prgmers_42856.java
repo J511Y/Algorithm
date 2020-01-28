@@ -1,6 +1,6 @@
-package baekjoon_queue;
+package programmers;
 import java.util.*;
-public class programmers_42856 {
+public class prgmers_42856 {
 	public static int[] solution(int[] progresses, int[] speeds) {
 		List<Integer> list = new ArrayList<>();
 		int idx = 0;

@@ -1,4 +1,4 @@
-package programmers_stack_queue;
+package programmers;
 import java.util.*;
 public class prgmers_42583 {
 	public static int solution(int bridge_length, int weight, int[] truck_weights) {

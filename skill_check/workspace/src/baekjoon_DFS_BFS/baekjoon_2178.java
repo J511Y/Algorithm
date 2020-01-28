@@ -1,4 +1,4 @@
-package dFS_BFS;
+package baekjoon_DFS_BFS;
 import java.util.*;
 public class baekjoon_2178 {
 	static int x,y;

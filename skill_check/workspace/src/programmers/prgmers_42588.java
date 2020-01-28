@@ -1,4 +1,4 @@
-package programmers_stack_queue;
+package programmers;
 import java.util.*;
 /*
  * 이 문제는 스택을 모를 때 푼 문제라 스택이 사용되지 않았습니다.

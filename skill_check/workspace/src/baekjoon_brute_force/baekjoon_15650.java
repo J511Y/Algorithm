@@ -1,4 +1,4 @@
-package baekjoon_bruteforce;
+package baekjoon_brute_force;
 
 public class baekjoon_15650 {
 

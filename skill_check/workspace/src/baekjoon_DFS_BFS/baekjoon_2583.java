@@ -1,4 +1,4 @@
-package baekjoon_DFSBFS;
+package baekjoon_DFS_BFS;
 import java.util.*;
 public class baekjoon_2583 {
 	static List<Integer> list = new ArrayList<>();

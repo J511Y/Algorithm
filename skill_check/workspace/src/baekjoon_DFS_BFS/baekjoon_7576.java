@@ -1,4 +1,4 @@
-package baekjoon_DFSBFS;
+package baekjoon_DFS_BFS;
 import java.util.*;
 public class baekjoon_7576 {
 	static int[][] WH = new int[][] {{0, 1, 0, -1}, {1, 0, -1, 0}};

@@ -1,6 +1,6 @@
 package baekjoon_DFS_BFS;
 import java.util.*;
-public class baekjoon_DFS_BFS_1260 {
+public class baekjoon_1260 {
 	static List<Integer> dfs(int[][]arr, int v, List<Integer> list){
 		if(list.size() == arr.length) return list;
 		for(int i=0; i<arr.length; i++) {

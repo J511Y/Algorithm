@@ -1,4 +1,4 @@
-package baekjoon_graph_tree;
+package baekjoon_tree;
 import java.util.*;
 public class baekjoon_9237 {
 	public static void main(String[] args) {

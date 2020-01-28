@@ -1,4 +1,4 @@
-package baekjoon_bruteforce;
+package baekjoon_brute_force;
 import java.util.*;
 public class baekjoon_6603 {
 	static long count = 0;
