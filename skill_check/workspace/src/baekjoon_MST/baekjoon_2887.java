@@ -47,8 +47,81 @@ min(|xA-xB|, |yA-yB|, |zA-zB|)이다.
  * 두 점이 충분히 가까운지를 보려면 결국 정렬을 해야한다는 건데.
  * 이건 좀 더 생각을 해봐야겠다.
  * 
+ * 재 풀이 전 생각 2020.02.02 22:43
+ * ---------------
+ * 어제 들었던 생각대로 가까운 두 점을 상대로만 간선을 만드는 게 핵심인 것 같다.
+ * 그러기 위해선 정렬이 필요할 것 같고.. 정렬의 조건에 대해선 고민을 좀 더 해봐야겠다.
+ * 단순히 x, y, z를 작은 순으로 정렬한다고 치면 x가 같을 때 y, z가 엄청 먼 경우도 생길 수 있을테니까 말이당.
+ * 
+ * 방법이 생각이 안나서 검색해봤더니 그냥 x, y, z 모두 한 번씩 정렬해서 인접한 노드끼리의 간선만 가져가는 방식이더라.
+ * 해봐야징
+ * 
  */
 import java.util.*;
+class Node{
+	int x;
+	int y;
+	int z;
+	int idx;
+	Node(int x, int y, int z, int idx){
+		this.x = x;
+		this.y = y;
+		this.z = z;
+		this.idx = idx;
+	}
+}
+public class baekjoon_2887 {
+	static int n;
+	static int[] uf;
+	static Node[] node;
+	static PriorityQueue<int[]> edge = new PriorityQueue<int[]>((a1, a2) -> {return a1[2] - a2[2];});
+	static void createEdge(int x) {
+		Comparator<Node> comp = (n1, n2) -> n1.x < n2.x ? -1 : 1;
+		Arrays.parallelSort(node, comp);
+		for(int i = 1; i < n; i++) edge.add(new int[] {node[i - 1].idx, node[i].idx, Math.abs(node[i].x - node[i - 1].x)});
+		
+		comp = (n1, n2) -> n1.y < n2.y ? -1 : 1;
+		Arrays.parallelSort(node, comp);
+		for(int i = 1; i < n; i++) edge.add(new int[] {node[i - 1].idx, node[i].idx, Math.abs(node[i].y - node[i - 1].y)});
+		
+		comp = (n1, n2) -> n1.z < n2.z ? -1 : 1;
+		Arrays.parallelSort(node, comp);
+		for(int i = 1; i < n; i++) edge.add(new int[] {node[i - 1].idx, node[i].idx, Math.abs(node[i].z - node[i - 1].z)});
+	}
+	static void union(int a, int b) {
+		a = find(a);
+		b = find(b);
+		if(a != b) uf[b] = a;
+	}
+	static int find(int a) {
+		if(a == uf[a]) return a;
+		return uf[a] = find(uf[a]);
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		uf = new int[n + 1];
+		node = new Node[n];
+		for(int i = 0; i <= n; i++) uf[i] = i;
+		for(int i = 0; i < n; i++) node[i] = new Node(sc.nextInt(), sc.nextInt(), sc.nextInt(), i);
+		createEdge(0);
+		int sum = 0, cnt = 0;
+		while(cnt < n && !edge.isEmpty()) {
+			int[] e = edge.poll();
+			int a = e[0], b = e[1], cost = e[2];
+			if(find(a) != find(b)) {
+				union(a, b);
+				sum += cost;
+				cnt++;
+			}
+		}
+		System.out.println(sum);
+	}
+}
+
+
+/*
+ * import java.util.*;
 class Node{
 	int x;
 	int y;
@@ -111,3 +184,4 @@ public class baekjoon_2887 {
 		System.out.println(sum);
 	}
 }
+ */
