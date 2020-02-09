@@ -1,3 +1,4 @@
+package baekjoon_star;
 import java.io.*;
 class Main{
     public static void main(String[] ar) throws Exception{
