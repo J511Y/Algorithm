@@ -44,25 +44,33 @@ public class baekjoon_1753 {
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		// 입력받기
 		String[] input = br.readLine().split(" ");
 		int v = Integer.parseInt(input[0]) + 1, e = Integer.parseInt(input[1]), k = Integer.parseInt(br.readLine());
 		ArrayList<ArrayList<int[]>> list = new ArrayList<ArrayList<int[]>>();
+		// list 초기화 구문
 		for(int i = 0; i < v; i++) list.add(new ArrayList<int[]>());
+		// 결과 저장 rst, 방문 저장 vst
 		int[] rst = new int[v], vst = new int[v];
+		// 결과 저장 rst의 자기 자신을 제외한 나머지는 INF로 초기화
 		for(int i = 1; i < v; i++){
 			if(i == k) continue;
 			rst[i] = INF;
 		}
+		// 본인은 방문했다고 표시.(재방문 안하도록)
 		vst[k] = 1;
 		
+		// 인접리스트 생성
 		for(int i = 0; i < e; i++){
 			input = br.readLine().split(" ");
 			int a = Integer.parseInt(input[0]), b = Integer.parseInt(input[1]), c = Integer.parseInt(input[2]);
 			list.get(a).add(new int[] {b, c});
 		}
 		
+		// 인접리스트 정렬
 		for(int i = 0; i < v; i++) list.get(i).sort((a, b) -> {return a[1] - b[1];});
 		
+		// 우선순위 큐 생성, 재계산 안하도록 tmpList, cnt, size 선언 및 초기화
 		PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> {return a[1] - b[1];});
 		ArrayList<int[]> tmpList = list.get(k);
 		int cnt = 1, size = tmpList.size();
@@ -85,12 +93,14 @@ public class baekjoon_1753 {
 				for(int i = 0; i < size; i++) {
 					int[] tmpArr = tmpList.get(i);
 					if(vst[tmpArr[0]] == 0) {
+						// 해당 정점을 방문하기까지의 가중치를 더해준다.
 						tmpArr[1] += b;
 						pq.add(tmpArr);
 					}
 				}
 			}
 		}
+		// 출력
 		for(int i = 1; i < v; i++){
 			bw.write(rst[i] == INF ? "INF" : (rst[i] + ""));
 			bw.write("\n");
