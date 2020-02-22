@@ -1,4 +1,4 @@
-package baekjoon_basic;
+package baekjoon_segmentTree;
 import java.util.*;
 import java.io.*;
 public class baekjoon_2357 {
