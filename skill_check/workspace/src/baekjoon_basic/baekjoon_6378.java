@@ -6,16 +6,7 @@ public class baekjoon_6378 {
 	static int dr(String s) {
 		int sum = 0;
 		for(byte b : s.getBytes()) sum += b - '0';
-		return dr(sum);
-	}
-	static int dr(int x) {
-		int sum = 0;
-		while(x > 0) {
-			sum += x % 10;
-			x /= 10;
-		}
-		if(sum > 9) sum = dr(sum);
-		return sum;
+		return sum > 9 ? dr(sum + "") : sum;
 	}
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
