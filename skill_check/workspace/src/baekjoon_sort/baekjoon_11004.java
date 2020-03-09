@@ -9,7 +9,7 @@ public class baekjoon_11004 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int n = Int(st.nextToken()), k = Int(st.nextToken());
-		int[] arr = new int[n];
+		Integer[] arr = new Integer[n];
 		st = new StringTokenizer(br.readLine());
 		for(int i = 0; i < n; i++) arr[i] = Int(st.nextToken());
 		Arrays.sort(arr);
