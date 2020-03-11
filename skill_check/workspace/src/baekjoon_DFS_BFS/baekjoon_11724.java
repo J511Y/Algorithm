@@ -1,5 +1,7 @@
 package baekjoon_DFS_BFS;
 import java.util.*;
+// https://www.acmicpc.net/problem/11724
+// 연결 요소의 개수
 public class baekjoon_11724 {
 	static int[][] arr;
 	static int[] vst;
