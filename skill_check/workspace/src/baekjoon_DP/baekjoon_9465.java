@@ -11,7 +11,7 @@ public class baekjoon_9465 {
 		int tc = Int(br.readLine());
 		for(int i = 0; i < tc; i++) {
 			int n = Int(br.readLine());
-			int[][] arr = new int[2][100001], dp = new int[2][100010];
+			int[][] arr = new int[2][100005], dp = new int[2][100005];
 			for(int j = 0; j < 2; j++) {
 				StringTokenizer st = new StringTokenizer(br.readLine());
 				for(int k = 2; k < n + 2; k++) arr[j][k] = Int(st.nextToken());
