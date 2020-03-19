@@ -19,5 +19,6 @@ public class baekjoon_2468 {
 			}
 		}
 		
+		for(int i = 0; i < max; i++) BFS();
 	}
 }
