@@ -17,14 +17,13 @@ public class prgmers_12936 {
         for(int i = 1; i <= n; i++) list.add(i);
         int[] answer = new int[n];
         int idx = 0;
-        for(long i = n - 1; i > 0; i--){
-            long mok = k / fact[(int)i];
-            answer[idx++] = list.get((int)mok);
-            list.remove((int)mok);
-            k %= fact[(int)i];
+        for(int i = n - 1; i > 0; i--){
+            int mok = (int)(k / fact[i]);
+            answer[idx++] = list.get(mok);
+            list.remove(mok);
+            k %= fact[i];
         }
         answer[idx] = list.get(0);
-        System.out.println(Arrays.toString(answer));
         return answer;
     }
 	public static void main(String[] args) {
