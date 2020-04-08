@@ -19,23 +19,16 @@ public class baekjoon_11054 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt(), max = 0;
-		int[] arr = new int[n], LIS = new int[n+1], LDS = new int[n + 1];
-		for(int i = 0; i < n; i++) arr[i] = sc.nextInt();
+		int[] left = new int[n], right = new int[n], LIS = new int[n+1], LDS = new int[n + 1];
+		for(int i = 0; i < n; i++) right[n - i - 1] = left[i] = sc.nextInt();
 		for(int i = 0; i < n; i++) {
-			LIS[i] = 1;
+			LIS[i] = 1; LDS[i] = 1;
 			for(int j = 0; j < i; j++) {
-				if(arr[i] > arr[j]) LIS[i] = Math.max(LIS[i], LIS[j] + 1);
+				if(left[i] > left[j]) LIS[i] = Math.max(LIS[i], LIS[j] + 1);
+				if(right[i] > right[j]) LDS[i] = Math.max(LDS[i], LDS[j] + 1);
 			}
 		}
-		for(int i = n - 1; i >= 0; i--) {
-			LDS[i] = 1;
-			for(int j = n - 1; j >= 0; j--) {
-				if(arr[i] > arr[j]) LDS[i] = Math.max(LDS[i], LDS[j] + 1);
-			}
-		}
-		for(int i = 0; i < n; i++) {
-			max = Math.max(max, LIS[i] + LDS[i] - 1);
-		}
+		for(int i = 0; i < n; i++) max = Math.max(max, LIS[i] + LDS[n - i - 1] - 1);
 		System.out.println(max);
 	}
 }
