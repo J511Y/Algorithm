@@ -1,5 +1,5 @@
 package baekjoon_lis;
-//https://www.acmicpc.net/problem/11053
+//https://www.acmicpc.net/problem/11722
 //가장 긴 감소하는 부분 수열
 import java.util.*;
 public class baekjoon_11722 {
