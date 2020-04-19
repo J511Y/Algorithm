@@ -38,13 +38,11 @@ M은 1000이하이다. 다음 N * N 행렬을 통해 임의의 두 도시가 연결되었는지에 관한 정
  * union할때도 배열 모든 값을 확인하지 않고도 가능한 방법이 없을지 생각해봐야겠다.
  */
 public class baekjoon_1976 {
-	static int n, m;
-	static int[][] map;
-	static int[] uf;
+	static int[] uf = new int[201];
 	static void union(int a, int b){
         a = find(a);
         b = find(b);
-        if(a != b ) uf[b] = a;
+        uf[a] = b;
     }
     static int find(int x){
         if(x == uf[x]) return x;
@@ -52,21 +50,18 @@ public class baekjoon_1976 {
     }
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		n = sc.nextInt(); m = sc.nextInt();
-		sc.nextLine();
-		map = new int[n][];
-		uf = new int[n]; 
-		for(int i = 0; i < n; i++) {
-			map[i] = Arrays.stream(sc.nextLine().split(" ")).mapToInt(s->Integer.parseInt(s)).toArray();
-			uf[i] = i;
+		int n = sc.nextInt(), m = sc.nextInt();
+		for(int i = 1; i <= n; i++) uf[i] = i;
+		for(int i = 1; i <= n; i++) {
+			for(int j = 1; j <= n; j++) {
+				int a = sc.nextInt();
+				if(a == 1) union(i, j);
+			}
 		}
-		for(int i = 0; i < n * n; i++)
-			if(map[i/n][i%n] == 1) union(i/n, i%n);
 		
-		System.out.println(Arrays.toString(uf));
-		int x = uf[sc.nextInt() - 1];
+		int x = find(sc.nextInt());
 		for(int i = 1; i < m; i++) {
-			if(x != uf[sc.nextInt() - 1]) {
+			if(x != find(sc.nextInt())) {
 				System.out.println("NO");
 				return;
 			}
