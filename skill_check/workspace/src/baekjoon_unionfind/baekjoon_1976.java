@@ -41,9 +41,15 @@ public class baekjoon_1976 {
 	static int n, m;
 	static int[][] map;
 	static int[] uf;
-	static void union(int a, int b) {
-		uf[a] = uf[b] = Math.min(uf[a], uf[b]);
-	}
+	static void union(int a, int b){
+        a = find(a);
+        b = find(b);
+        if(a != b ) uf[b] = a;
+    }
+    static int find(int x){
+        if(x == uf[x]) return x;
+        return uf[x] = find(uf[x]);
+    }
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		n = sc.nextInt(); m = sc.nextInt();
@@ -57,6 +63,7 @@ public class baekjoon_1976 {
 		for(int i = 0; i < n * n; i++)
 			if(map[i/n][i%n] == 1) union(i/n, i%n);
 		
+		System.out.println(Arrays.toString(uf));
 		int x = uf[sc.nextInt() - 1];
 		for(int i = 1; i < m; i++) {
 			if(x != uf[sc.nextInt() - 1]) {
