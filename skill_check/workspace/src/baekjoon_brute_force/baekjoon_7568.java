@@ -1,5 +1,6 @@
 package baekjoon_brute_force;
 import java.util.*;
+// ë¸Œë£¨íŠ¸í¬ìŠ¤ì¸ë° ë°±íŠ¸ë˜í‚¹ìœ¼ë¡œ í’€ìŒ
 public class baekjoon_7568 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -11,12 +12,12 @@ public class baekjoon_7568 {
         }
         
         for(int i=0; i<cnt; i++){
-        	// ÇöÀç ¾Æ¹«¿Íµµ ºñ±³ÇÏÁö ¾Ê¾ÒÀ¸´Ï 1µî ½ÃÄÑÁÜ
+        	// í˜„ì¬ ì•„ë¬´ì™€ë„ ë¹„êµí•˜ì§€ ì•Šì•˜ìœ¼ë‹ˆ 1ë“± ì‹œì¼œì¤Œ
             int rank = 1;
             for(int j=0; j<cnt; j++){
-            	// ¹è¿­¿¡ Á¸ÀçÇÏ´Â ¸ğµÎ¿Í ºñ±³¸¦ ÇØºÁ¾ß ÇÏ±â ¶§¹®¿¡ 0ºÎÅÍ ½ÃÀÛ. i == j¶ó¸é º»ÀÎÀ» ¶æÇÏ¹Ç·Î ÆĞ½º
+            	// ë°°ì—´ì— ì¡´ì¬í•˜ëŠ” ëª¨ë‘ì™€ ë¹„êµë¥¼ í•´ë´ì•¼ í•˜ê¸° ë•Œë¬¸ì— 0ë¶€í„° ì‹œì‘. i == jë¼ë©´ ë³¸ì¸ì„ ëœ»í•˜ë¯€ë¡œ íŒ¨ìŠ¤
                 if (i == j) continue;
-                // µ¢Ä¡°¡ ´õ ÀÛ´Ù¸é ·©Å©¸¦ ´Ã·ÁÁÜ
+                // ë©ì¹˜ê°€ ë” ì‘ë‹¤ë©´ ë­í¬ë¥¼ ëŠ˜ë ¤ì¤Œ
                 if (arr[i][0] < arr[j][0] && arr[i][1] < arr[j][1]) rank++;
             }
             System.out.print(rank+" ");
