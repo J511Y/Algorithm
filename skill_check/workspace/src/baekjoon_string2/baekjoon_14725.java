@@ -15,7 +15,7 @@ class Trie {
                 t.add(arr, idx + 1);
                 find = true;
             }
-       }
+        }
         if(!find){
             dict.add(new Trie(arr[idx]));
             if (idx < arr.length - 1) add(arr, idx);
