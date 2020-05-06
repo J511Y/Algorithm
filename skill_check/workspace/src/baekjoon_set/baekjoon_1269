@@ -1,0 +1,16 @@
+num1, num2 = map(int, input().split())
+
+s1=set()
+s2=set()
+
+a=input().split()
+b=input().split()
+
+for i in a:
+    s1.add(int(i))
+for i in b:
+    s2.add(int(i))
+
+s = set()
+s = (s1 | s2) - (s1 & s2)
+print(len(s))
