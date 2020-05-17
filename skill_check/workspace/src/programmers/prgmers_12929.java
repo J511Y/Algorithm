@@ -4,19 +4,16 @@ package programmers;
 
 public class prgmers_12929 {
 	static int answer = 0;
-	static void func(int n, int open, int close, String str) {
-		if(open == n && close == n) {
-			answer++;
-			System.out.println(str);
-		}
+	static void func(int n, int open, int close) {
+		if(open == n && close == n) answer++;
 		else {
-			if(open < n) func(n, open + 1, close, str + "(");
-			if(close < open) func(n, open, close + 1, str + ")");
+			if(open < n) func(n, open + 1, close);
+			if(close < open) func(n, open, close + 1);
 		}
 	}
 	static public int solution(int n) {
 		answer = 0;
-		func(n, 0, 0, "");
+		func(n, 0, 0);
         return answer;
     }
 	public static void main(String[] args) {
