@@ -1,43 +1,41 @@
 package programmers;
 import java.util.*;
 public class prgmers_42860 {
-	static byte[] bArr;
-	static boolean already = true;
-	static boolean disPlus = true;
-	static int distance(String name, int idx) {
-		if(!disPlus) already = false;
-		for(int i=idx + 1; i<bArr.length; i++) {			
-			if(bArr[i] != 'A') {
-				int x = i - (idx < 0 ? 0 : idx);
-				disPlus = x > (bArr.length / 2) ? false : disPlus;
-				x = x > (bArr.length / 2) ? bArr.length - x : x;
-				return x; 
-			}
-		}
-		return -1;
-	}
 	public static int solution(String name) {
-		bArr = name.getBytes();
-        int answer = 0, idx = -1, dis = -1;
+		byte[] arr = name.getBytes();
+        int answer = 0, min = 1 << 30, total = 0, len = arr.length;
         byte A = 'A';
-        while((dis = distance(name, idx)) != -1) {
-        	for(idx++; idx < bArr.length; idx++)
-        		if(bArr[idx] != 'A') break;
-        	byte b = bArr[idx];
-        	int ud = A - b < 0 ? b - A : A - b;
+        for(byte B : arr) {
+        	int ud = Math.max(A, B) - Math.min(A, B);
         	ud = ud > 13 ? 26 - ud : ud;
-        	answer += (already ? dis : 0) + ud;
+        	if(ud > 0) {
+        		answer += ud;
+        		total++;
+        	}
         }
-        return answer;
+        for(int i = 0; i < len; i++) {
+        	int cnt = 0, j = 0, move = i > len / 2 ? len - i : i;
+        	for(; j < arr.length; j++) {
+        		if(arr[(i + j) % arr.length] != 'A') cnt++;
+        		if(cnt == total) break;
+        	}
+        	min = Math.min(min, move + j);
+        	for(j = 0, cnt = 0; j < arr.length; j++) {
+        		if(arr[(len + i - j) % arr.length] != 'A') cnt++;
+        		if(cnt == total) break;
+        	}
+        	min = Math.min(min, move + j);
+        }
+        return answer + min;
     }
 	public static void main(String[] args) {
-//		System.out.println(solution("JEROEN"));
-//		System.out.println(solution("ABAAAAAAABA"));
-//		System.out.println(solution("AAB"));
-//		System.out.println(solution("AABAAAAAAABBB")); // 11
+		System.out.println(solution("JEROEN"));
+		System.out.println(solution("ABAAAAAAABA"));
+		System.out.println(solution("AAB"));
+		System.out.println(solution("AABAAAAAAABBB")); // 11
 		System.out.println(solution("CZ"));
 //		System.out.println(solution("BBBBAAAAAB"));
-//		System.out.println(solution("JAN"));
+		System.out.println(solution("JAN"));
 	}
 }
 /*
