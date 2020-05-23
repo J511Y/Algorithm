@@ -1,3 +1,4 @@
+package baekjoon_simulation;
 import java.util.*;
 class beakjoon_14891{
 	static int getDis(int i) {
