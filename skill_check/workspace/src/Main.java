@@ -1,32 +1,48 @@
 import java.util.*;
-class Main {
-//	public static int solution(int[] cookie) {
-//        int answer = 0, len = cookie.length, sum = 0;
-//        int[] sumArr = new int [len];
-//        for(int i = 0; i < len; i++) sumArr[i] = sum += cookie[i];
-//        for(int i : sumArr) System.out.println(i);
-//        return answer;
-//    }
-	public static void main(String[] args) {
-//		System.out.println(solution(new int [] {1,1,2,3}));
-//		System.out.println(solution(new int [] {1,2,4,5}));
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt(), m = sc.nextInt(), k = sc.nextInt();
-		int[][] arr = new int [n][m];
-		int[] sum = new int [n];
-		for(int i = 0; i < n; i++) {
-			for(int j = 0; j < m; j++) {
-				arr[i][j] = sc.nextInt();
-			}
+
+public class Main {
+	public static final Scanner scanner = new Scanner(System.in);
+
+	/**
+	* 게임의 규칙에 따라 현무가 승리할 수 있는 경우의 수가 존재하는지 검사하는 함수  
+	*
+	* @param data 
+	* @param n 
+	* @param k 
+	* @return true   현무가 승리할 수 있는 경우의 수가 하나 이상 존재한다면
+	* @return false  else
+	*/
+	public static boolean isWinnable(int[] data, int n, int k) {
+
+		int winCount = 0;
+		long sum = 0;
+		for(int i=0; i<k; i++){
+				if(i<n-1 && (data[i]+data[i+1]) % 2 == 0)
+						winCount++;
+				k++;
 		}
-		for(int j = 0; j < m; j++) {
-			for(int i = 0; i < n; i++) {
-				sum[i] += arr[i][j];
-				if(sum[i] >= k) {
-					System.out.println((i+1) + " " + (j+1));
-					return;
-				}
-			}
+//		System.out.println("k=" + k);
+		if(winCount > 0)
+		{
+				return true;
+		}else{
+				return false;
 		}
 	}
+
+	public static void main(String[] args) throws Exception {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] arr = new int[n];
+		for(int i = 0; i < n; i++) arr[i] = sc.nextInt();
+		int last = arr[0], cnt = 1;
+		for(int i = 1; i < n; i++){
+			if(last < 0 && arr[i] < 0) continue;
+			if(last > 0 && arr[i] > 0) continue;
+			cnt++;
+			last = arr[i];
+		}
+		System.out.print(cnt);
+	}
+
 }
