@@ -7,7 +7,7 @@ public class baekjoon_15650 {
 			System.out.println(s.trim());
 			return;
 		}
-		for(int i=start; i<=n - m + cnt + 1; i++) {
+		for(int i = start; i <= n; i++) {
 			func(cnt + 1, s + i + " ", i + 1);
 		}
 	}
