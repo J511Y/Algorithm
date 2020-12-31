@@ -1,25 +1,42 @@
 import java.util.*;
-
-class Main {
-	public static void main(String[] ar) {
-		Main m = new Main();
-		System.out.println((1 + Integer.MAX_VALUE) == Integer.MIN_VALUE);
+class Tree {
+	int val;
+	Tree left, root, right;
+	
+	Tree (int val) {
+		this.val = val;
 	}
-    
-    static int func(int n){
-    	int left = 1, right = Integer.MAX_VALUE;
-    	while(left <= right){
-    		int mid = (left + right) / 2;
-    		// a = 1부터 mid까지의 합
-    		// b = 1부터 mid + 1 까지의 합
-    		int a, b;
-    		
-    		// 나올 수 있는 조건은 3가지
-    		// n이 a 보다 작은 경우
-    		// n이 b 보다 같거나 큰 경우
-    		// 그 외
-    		
-    	}
-    	return left;
-    }
+	
+	void addChild(int child) {
+		if(this.val > child) {
+			// 왼쪽
+			if(left != null) left.addChild(child);
+			else this.left = new Tree(child);
+		} else {
+			// 오른쪽
+			if(right != null) right.addChild(child);
+			else this.right = new Tree(child);
+		}
+	}
+	
+	void postOrder() {
+		if(left != null) this.left.postOrder();
+		if(right != null) this.right.postOrder();		
+		System.out.println(this.val);
+	}
+}
+class Main {
+	public static void main (String[] args) {
+	    Scanner sc = new Scanner(System.in);
+		int n = Integer.parseInt(sc.nextLine());
+		Tree root = new Tree(n);
+		try {
+			while(true) {
+				n = Integer.parseInt(sc.nextLine());
+				root.addChild(n);				
+			}
+		} catch(Exception e) {
+			root.postOrder();
+		}
+	}
 }
