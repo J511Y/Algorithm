@@ -1,0 +1,101 @@
+#include <iostream>
+#include <queue>
+#include <algorithm>
+
+using namespace std;
+//¿¹Á¦ 2¹ø 
+
+
+int visit[110][110][110];
+int map[110][110][110];
+
+int col, row, t, ans = -1;
+
+int dx[] = { -1, 0, 1, 0, 0, 0};
+int dy[] = { 0, 1, 0, -1, 0, 0};
+int dh[] = { 0, 0, 0, 0, -1, 1 };
+
+typedef struct point {
+	int x;
+	int y;
+	int hh;
+}point;
+
+queue<point> q;
+
+void bfs() {
+
+	int nx = 0, ny = 0, nhh = 0;
+	while (!q.empty())
+	{
+		point h = q.front(); q.pop();
+
+		for (int i = 0; i < 6; i++)
+		{
+			nx = h.x + dx[i];
+			ny = h.y + dy[i];
+			nhh = h.hh + dh[i];
+
+			if (map[nx][ny][nhh] == 0)
+			{
+				if (nx >= 1 && nx <= row  && ny >= 1 && ny <= col  && nhh>=1 && nhh <= t)
+				{
+					q.push({ nx, ny, nhh });
+					visit[nx][ny][nhh] = visit[h.x][h.y][h.hh] + 1;
+					map[nx][ny][nhh] = 1;
+				}
+			}
+		}
+	}
+}
+int main()
+{
+	ios_base::sync_with_stdio(0); cin.tie(0);
+
+	cin >> col >> row  >> t;
+	//row = row * t;
+	for (int k = 1; k <= t; k++)
+	{
+		for (int i = 1; i <= row; i++)
+		{
+			for (int j = 1; j <= col; j++)
+			{
+				cin >> map[i][j][k];
+				if (map[i][j][k] == 1) {
+					q.push({ i, j, k });
+				}
+			}
+			
+		}
+	}
+
+	bfs();
+
+	int f = 1;
+	for (int i = 1; i <= row; i++)
+	{
+		for (int j = 1; j <= col; j++)
+		{
+			for (int k = 1; k <= t; k++)
+			{
+				if (map[i][j][k] == 0) f = 0;
+			}
+		}
+	}
+	if(f == 1) {
+		for (int i = 1; i <= row; i++)
+		{
+			for (int j = 1; j <= col; j++)
+			{
+				for (int k = 1; k <= t; k++)
+				{
+					if (ans < visit[i][j][k]) ans = visit[i][j][k];
+				}
+				
+			}
+		}
+	}
+
+	cout << ans << '\n';
+	return 0;
+}
