@@ -1,3 +1,4 @@
+package baekjoon_DFS_BFS;
 import java.util.*;
 class baekjoon_7562 {
 	static int[][] wh = {{-2, -2, -1, -1, 1, 1, 2, 2}, {-1, 1, -2, 2, -2, 2, -1, 1}};

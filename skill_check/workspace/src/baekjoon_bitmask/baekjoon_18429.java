@@ -1,3 +1,4 @@
+package baekjoon_bitmask;
 import java.util.*;
 class baekjoon_18429 {
 	static int[] arr;

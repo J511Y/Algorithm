@@ -1,3 +1,4 @@
+package baekjoon_adhoc;
 import java.util.*;
 class baekjoon_2505 {
 	static List<int[]> list = new ArrayList<>();

@@ -1,3 +1,4 @@
+package baekjoon_bitmask;
 import java.util.*;
 class baekjoon_14629 {
 	static long n, min = 1 << 30;
