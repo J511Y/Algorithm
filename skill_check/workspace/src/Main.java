@@ -52,10 +52,14 @@ class Main {
 		Output("## 업데이트 : " + sdf.format(new Date()));
 		String lastKey = "";
 		for(String key : map.keySet()) {
-			if(key.startsWith(lastKey) == false) {
+			String[] keySplit = key.split(" ");
+			String site = keySplit[0], code = keySplit[1];
+			if(site.equals(lastKey) == false) {
 				Output("***");
+				Output("## " + site);
+				lastKey = site;
 			}
-			Output("[" + key + "](" + map.get(key) + ")");
+			Output("* [" + code + "번](" + map.get(key) + ")");
 		}
 		FileSave(output.toString());
 	}
@@ -81,7 +85,9 @@ class Main {
 					Print(tab + "ㄴ" + folder.getName() + "\t(WhiteList Check Result = " + pass + ")");
 					
 					if (pass) {
-						map.put(site.name() + problemCode, withOutExtension);
+						String key = SiteToString(site) + problemCode;
+						if (map.containsKey(key)) continue;
+						map.putIfAbsent(key, withOutExtension);
 					}
 				} catch(Exception e) {
 					continue;
@@ -89,6 +95,9 @@ class Main {
 			}
 			// 하위 폴더가 존재할 경우 재귀
 			else {
+				// bin폴더 제외
+				if(folder.getName().equals("bin")) return;
+				
 				Print(tab + "ㄴ" + folder.getName());
 				File[] child = FileDir(folder.getAbsolutePath());
 				FileSearch(child, depth + 1);
@@ -96,6 +105,15 @@ class Main {
 	    }
 	}
 
+	String SiteToString(Site site) {
+		String rtn = "-";
+		switch(site.ordinal()) {
+			case 1 : rtn = "백준 "; break;
+			case 2 : rtn = "프로그래머스 "; break;
+		}
+		return rtn;
+	}
+	
 	// 화이트리스트
 	Site WhiteList(String name) {
 		if (name.indexOf("_") == -1) return Site.NONE;
