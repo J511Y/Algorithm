@@ -9,7 +9,9 @@ class Main {
 	static private String dir = System.getProperty("user.dir");
 	static StringBuilder console = new StringBuilder();
 	static StringBuilder output = new StringBuilder();
-	SortedMap<String, String> map = new TreeMap<String, String>();
+	SortedMap<String, String> map = new TreeMap<String, String>(
+		(a, b) -> Integer.parseInt(a.split(" ")[1]) - Integer.parseInt(b.split(" ")[1])
+	);
 	
 	public static void main (String[] args) {
 		Main main = new Main();
@@ -49,14 +51,15 @@ class Main {
 	void WriteReadMe() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
 		Output("# 알고리즘 문제 목록 (AC 여부 추후 개발)");
-		Output("## 업데이트 : " + sdf.format(new Date()));
+		Output("\n\tREADME.md 업데이트 : " + sdf.format(new Date()) + "   \n   ");
 		String lastKey = "";
 		for(String key : map.keySet()) {
 			String[] keySplit = key.split(" ");
 			String site = keySplit[0], code = keySplit[1];
 			if(site.equals(lastKey) == false) {
+				long count = map.keySet().stream().filter((str) -> str.startsWith(site)).count();
+				Output("## " + site + " (총 " + count + "문제)");
 				Output("***");
-				Output("## " + site);
 				lastKey = site;
 			}
 			Output("* [" + code + "번](" + map.get(key) + ")");
