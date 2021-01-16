@@ -92,7 +92,7 @@ class ReadmeCreator {
 					if (pass) {
 						String key = SiteToString(site) + problemCode;
 						if (map.containsKey(key)) continue;
-						map.putIfAbsent(key, getSiteLink(site));
+						map.putIfAbsent(key, getSiteLink(site) + problemCode);
 					}
 				} catch(Exception e) {
 					continue;
