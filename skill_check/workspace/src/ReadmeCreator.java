@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.regex.Pattern;
 import java.io.*;
 import java.text.SimpleDateFormat;
 class ReadmeCreator {
@@ -93,7 +92,7 @@ class ReadmeCreator {
 					if (pass) {
 						String key = SiteToString(site) + problemCode;
 						if (map.containsKey(key)) continue;
-						map.putIfAbsent(key, withOutExtension);
+						map.putIfAbsent(key, getSiteLink(site));
 					}
 				} catch(Exception e) {
 					continue;
@@ -109,6 +108,13 @@ class ReadmeCreator {
 				FileSearch(child, depth + 1);
 			}
 	    }
+	}
+	
+	String getSiteLink(Site site) {
+		String link = "";
+		if (site == Site.BAEKJOON) link = "https://www.acmicpc.net/problem/";
+		if (site == Site.PROGRAMMERS) link = "https://programmers.co.kr/learn/courses/30/lessons/";
+		return link;
 	}
 
 	String SiteToString(Site site) {
