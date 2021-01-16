@@ -9,9 +9,12 @@ class Main {
 	static private String dir = System.getProperty("user.dir");
 	static StringBuilder console = new StringBuilder();
 	static StringBuilder output = new StringBuilder();
-	SortedMap<String, String> map = new TreeMap<String, String>(
-		(a, b) -> Integer.parseInt(a.split(" ")[1]) - Integer.parseInt(b.split(" ")[1])
-	);
+	SortedMap<String, String> map = new TreeMap<String, String>((a, b) -> {
+		String[] as = a.split(" ");
+		String[] bs = b.split(" ");
+		int siteName = as[0].compareTo(bs[0]);
+		return siteName == 0 ? Integer.parseInt(as[1]) - Integer.parseInt(bs[1]) : siteName;
+	});
 	
 	public static void main (String[] args) {
 		Main main = new Main();
@@ -36,14 +39,14 @@ class Main {
 			File[] dir = FileDir();
 			FileSearch(dir, 0);
 		    
+			Print("Readme.md 파일 생성...");
+			WriteReadMe();
+			Print("Readme.md 파일 생성완료!");
 		} catch (Exception e) {
 			e.printStackTrace();
 			Print("Readme.md 파일 생성 중 오류 발생");
 		} finally {
 			// 콘솔 내용 출력
-			Print("Readme.md 파일 생성...");
-			WriteReadMe();
-			Print("Readme.md 파일 생성완료!");
 			System.out.print(console);
 		}
 	}
@@ -58,8 +61,8 @@ class Main {
 			String site = keySplit[0], code = keySplit[1];
 			if(site.equals(lastKey) == false) {
 				long count = map.keySet().stream().filter((str) -> str.startsWith(site)).count();
+				Output("\n");
 				Output("## " + site + " (총 " + count + "문제)");
-				Output("***");
 				lastKey = site;
 			}
 			Output("* [" + code + "번](" + map.get(key) + ")");
@@ -98,8 +101,8 @@ class Main {
 			}
 			// 하위 폴더가 존재할 경우 재귀
 			else {
-				// bin폴더 제외
-				if(folder.getName().equals("bin")) return;
+				// 폴더 블랙리스트 제외
+				//if(BlackList(folder.getName())) return;
 				
 				Print(tab + "ㄴ" + folder.getName());
 				File[] child = FileDir(folder.getAbsolutePath());
@@ -124,10 +127,19 @@ class Main {
 		switch(split_zero) {
 			case "baekjoon":
 				return Site.BAEKJOON;
-			case "programmers":
+			case "prgmers":
 				return Site.PROGRAMMERS;
 			default:
 				return Site.NONE;
+		}
+	}
+	
+	boolean BlackList(String name) {
+		switch(name) {
+			case "bin":
+				return true;
+			default :
+				return false;
 		}
 	}
 
@@ -143,7 +155,7 @@ class Main {
 		}
 	}
 	
-	// 파일 목록 출력
+	// 파일 목록
 	File[] FileDir() {
 		return FileDir(dir);
 	}
