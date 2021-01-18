@@ -1,10 +1,10 @@
 # 알고리즘 문제 목록 (AC 여부 추후 개발)
 
-	README.md 업데이트 : 2021-01-17 04:41   
+	README.md 업데이트 : 2021-01-18 11:20   
    
 
 
-## 백준 (총 397문제)
+## 백준 (총 402문제)
 * [1003번](https://www.acmicpc.net/problem/1003)
 * [1009번](https://www.acmicpc.net/problem/1009)
 * [1010번](https://www.acmicpc.net/problem/1010)
@@ -74,6 +74,7 @@
 * [1485번](https://www.acmicpc.net/problem/1485)
 * [1515번](https://www.acmicpc.net/problem/1515)
 * [1520번](https://www.acmicpc.net/problem/1520)
+* [1528번](https://www.acmicpc.net/problem/1528)
 * [1531번](https://www.acmicpc.net/problem/1531)
 * [1541번](https://www.acmicpc.net/problem/1541)
 * [1543번](https://www.acmicpc.net/problem/1543)
@@ -98,6 +99,7 @@
 * [1718번](https://www.acmicpc.net/problem/1718)
 * [1730번](https://www.acmicpc.net/problem/1730)
 * [1735번](https://www.acmicpc.net/problem/1735)
+* [1743번](https://www.acmicpc.net/problem/1743)
 * [1744번](https://www.acmicpc.net/problem/1744)
 * [1748번](https://www.acmicpc.net/problem/1748)
 * [1753번](https://www.acmicpc.net/problem/1753)
@@ -187,6 +189,7 @@
 * [2666번](https://www.acmicpc.net/problem/2666)
 * [2667번](https://www.acmicpc.net/problem/2667)
 * [2669번](https://www.acmicpc.net/problem/2669)
+* [2721번](https://www.acmicpc.net/problem/2721)
 * [2740번](https://www.acmicpc.net/problem/2740)
 * [2743번](https://www.acmicpc.net/problem/2743)
 * [2748번](https://www.acmicpc.net/problem/2748)
@@ -256,6 +259,7 @@
 * [5988번](https://www.acmicpc.net/problem/5988)
 * [6118번](https://www.acmicpc.net/problem/6118)
 * [6186번](https://www.acmicpc.net/problem/6186)
+* [6198번](https://www.acmicpc.net/problem/6198)
 * [6321번](https://www.acmicpc.net/problem/6321)
 * [6359번](https://www.acmicpc.net/problem/6359)
 * [6376번](https://www.acmicpc.net/problem/6376)
@@ -374,6 +378,7 @@
 * [15665번](https://www.acmicpc.net/problem/15665)
 * [15666번](https://www.acmicpc.net/problem/15666)
 * [15686번](https://www.acmicpc.net/problem/15686)
+* [15829번](https://www.acmicpc.net/problem/15829)
 * [15831번](https://www.acmicpc.net/problem/15831)
 * [15889번](https://www.acmicpc.net/problem/15889)
 * [15991번](https://www.acmicpc.net/problem/15991)
