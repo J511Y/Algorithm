@@ -1,10 +1,10 @@
 # 알고리즘 문제 목록 (AC 여부 추후 개발)
 
-	README.md 업데이트 : 2021-01-24 05:08   
+	README.md 업데이트 : 2021-01-25 11:32   
    
 
 
-## 백준 (총 418문제)
+## 백준 (총 419문제)
 * [1003번](https://www.acmicpc.net/problem/1003)
 * [1009번](https://www.acmicpc.net/problem/1009)
 * [1010번](https://www.acmicpc.net/problem/1010)
@@ -360,6 +360,7 @@
 * [12865번](https://www.acmicpc.net/problem/12865)
 * [13144번](https://www.acmicpc.net/problem/13144)
 * [13199번](https://www.acmicpc.net/problem/13199)
+* [14002번](https://www.acmicpc.net/problem/14002)
 * [14427번](https://www.acmicpc.net/problem/14427)
 * [14469번](https://www.acmicpc.net/problem/14469)
 * [14499번](https://www.acmicpc.net/problem/14499)
