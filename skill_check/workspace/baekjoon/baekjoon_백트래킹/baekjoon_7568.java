@@ -1,0 +1,26 @@
+package baekjoon_πÈ∆Æ∑°≈∑;
+import java.util.*;
+// Î∏åÎ£®?ä∏?è¨?ä§?ù∏?ç∞ Î∞±Ìä∏?ûò?Çπ?úºÎ°? ???ùå
+public class baekjoon_7568 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+        int cnt = sc.nextInt();
+        int [][] arr = new int [cnt][2];
+        for(int i=0; i<cnt; i++){
+            arr[i][0] = sc.nextInt();
+            arr[i][1] = sc.nextInt();
+        }
+        
+        for(int i=0; i<cnt; i++){
+        	// ?òÑ?û¨ ?ïÑÎ¨¥Ï??èÑ ÎπÑÍµê?ïòÏß? ?ïä?ïò?úº?ãà 1?ì± ?ãúÏºúÏ§å
+            int rank = 1;
+            for(int j=0; j<cnt; j++){
+            	// Î∞∞Ïó¥?óê Ï°¥Ïû¨?ïò?äî Î™®Îëê?? ÎπÑÍµêÎ•? ?ï¥Î¥êÏïº ?ïòÍ∏? ?ïåÎ¨∏Ïóê 0Î∂??Ñ∞ ?ãú?ûë. i == j?ùºÎ©? Î≥∏Ïù∏?ùÑ ?úª?ïòÎØ?Î°? ?å®?ä§
+                if (i == j) continue;
+                // ?ç©ÏπòÍ? ?çî ?ûë?ã§Î©? ?û≠?Å¨Î•? ?äò?†§Ï§?
+                if (arr[i][0] < arr[j][0] && arr[i][1] < arr[j][1]) rank++;
+            }
+            System.out.print(rank+" ");
+        }
+	}
+}

@@ -1,0 +1,18 @@
+package baekjoon_±âº»;
+import java.util.*;
+public class baekjoon_3986 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int rnd = sc.nextInt();
+		int cnt = 0;
+		while(rnd-->0) {
+			String s = sc.next();
+			while(s.contains("AA") || s.contains("BB")) {
+				s=s.replace("AA", ""); s=s.replace("BB", "");  
+			}
+			if (s.equals("")) cnt++;
+		}
+		System.out.println(cnt);
+	}
+}

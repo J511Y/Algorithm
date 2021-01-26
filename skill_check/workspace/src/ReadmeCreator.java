@@ -36,7 +36,7 @@ class ReadmeCreator {
 		try {
 			Print("Readme.md 파일 생성 시작");
 			File[] dir = FileDir();
-			FileSearch(dir, 0);
+			FileSearch(dir, 0, "");
 		    
 			Print("Readme.md 파일 생성...");
 			WriteReadMe();
@@ -57,19 +57,19 @@ class ReadmeCreator {
 		String lastKey = "";
 		for(String key : map.keySet()) {
 			String[] keySplit = key.split(" ");
-			String site = keySplit[0], code = keySplit[1];
+			String site = keySplit[0], code = keySplit[1], type = keySplit.length > 2 ? "_" + keySplit[2] : "";
 			if(site.equals(lastKey) == false) {
 				long count = map.keySet().stream().filter((str) -> str.startsWith(site)).count();
 				Output("\n");
 				Output("## " + site + " (총 " + count + "문제)");
 				lastKey = site;
 			}
-			Output("* [" + code + "번](" + map.get(key) + ")");
+			Output("* [" + code + "번" + type + "](" + map.get(key) + ")");
 		}
 		FileSave(output.toString());
 	}
 	
-	void FileSearch(File[] dir, int depth) {
+	void FileSearch(File[] dir, int depth, String problemType) {
 		// 출력 공백
 		String tab = "\t".repeat(depth);
 		
@@ -90,9 +90,9 @@ class ReadmeCreator {
 					Print(tab + "ㄴ" + folder.getName() + "\t(WhiteList Check Result = " + pass + ")");
 					
 					if (pass) {
-						String key = SiteToString(site) + problemCode;
+						String key = SiteToString(site) + problemCode + " " + problemType;
 						if (map.containsKey(key)) continue;
-						map.putIfAbsent(key, getSiteLink(site) + problemCode);
+						map.put(key, getSiteLink(site) + problemCode);
 					}
 				} catch(Exception e) {
 					continue;
@@ -103,9 +103,12 @@ class ReadmeCreator {
 				// 폴더 블랙리스트 제외
 				//if(BlackList(folder.getName())) return;
 				
-				Print(tab + "ㄴ" + folder.getName());
+				String name = folder.getName();
+				Print(tab + "ㄴ" + name);
 				File[] child = FileDir(folder.getAbsolutePath());
-				FileSearch(child, depth + 1);
+				String type = "";
+				if(name.indexOf("_") != -1) type = name.substring(name.indexOf("_") + 1);
+				FileSearch(child, depth + 1, type);
 			}
 	    }
 	}

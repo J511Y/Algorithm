@@ -1,0 +1,10 @@
+package baekjoon_±âº»;
+import java.util.*;
+public class baekjoon_2857 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		boolean find=false;
+		for(int i=1; i<6; i++) if(sc.next().contains("FBI")) {System.out.print(i+" ");find=true;}
+		if(!find)System.out.println("HE GOT AWAY!");
+	}
+}
