@@ -1,10 +1,10 @@
 # 알고리즘 문제 목록 (AC 여부 추후 개발)
 
-	README.md 업데이트 : 2021-01-26 11:16   
+	README.md 업데이트 : 2021-01-27 01:00   
    
 
 
-## 백준 (총 421문제)
+## 백준 (총 422문제)
 * [1003번_DP](https://www.acmicpc.net/problem/1003)
 * [1009번_기본](https://www.acmicpc.net/problem/1009)
 * [1010번_DP](https://www.acmicpc.net/problem/1010)
@@ -27,7 +27,7 @@
 * [1065번_재귀](https://www.acmicpc.net/problem/1065)
 * [1068번_트리](https://www.acmicpc.net/problem/1068)
 * [1072번_이분탐색](https://www.acmicpc.net/problem/1072)
-* [1074번_재귀](https://www.acmicpc.net/problem/1074)
+* [1074번_분할정복](https://www.acmicpc.net/problem/1074)
 * [1080번_그리디](https://www.acmicpc.net/problem/1080)
 * [1085번_수학2](https://www.acmicpc.net/problem/1085)
 * [1094번_재귀](https://www.acmicpc.net/problem/1094)
@@ -417,6 +417,7 @@
 * [18291번_기본수학](https://www.acmicpc.net/problem/18291)
 * [18373번_수학2](https://www.acmicpc.net/problem/18373)
 * [18429번_비트마스크](https://www.acmicpc.net/problem/18429)
+* [18870번_해시맵](https://www.acmicpc.net/problem/18870)
 * [18917번_SAQ](https://www.acmicpc.net/problem/18917)
 * [19238번_DFS와BFS](https://www.acmicpc.net/problem/19238)
 * [20041번_애드혹](https://www.acmicpc.net/problem/20041)
