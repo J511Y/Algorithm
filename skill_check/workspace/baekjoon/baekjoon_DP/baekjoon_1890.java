@@ -1,4 +1,4 @@
-package baekjoon_DFS_BFS;
+package baekjoon_DP;
 
 import java.util.*;
 public class baekjoon_1890 {
