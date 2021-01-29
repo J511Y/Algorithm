@@ -19,6 +19,7 @@ public class baekjoon_14002 {
 		}
 		List<Integer> list = new ArrayList<>();
 		int m = 0, max = Arrays.stream(dp).max().getAsInt();
+		System.out.println(Arrays.toString(idx));
 		for(int i = 0; i < n; i++) m = max == dp[i] ? i : m;
 		while(idx[m] != -1) {
 			list.add(arr[m]);
