@@ -11,14 +11,17 @@ public class baekjoon_8979 {
 		int[][] arr = new int[n][4];
 		for(int i = 0; i < n; i++) arr[i] = new int[] {sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt()};
 		Arrays.sort(arr, (a, b) -> {
-			int A = a[1] - b[1];
-			int B = a[2] - b[2];
-			int C = a[3] - b[3];
+			int A = b[1] - a[1];
+			int B = b[2] - a[2];
+			int C = b[3] - a[3];
 			return A == 0 ? B == 0 ? C : B : A;
 		});
-		for(int i = 0, j = 0; i < n; i++) {
+		for(int i = 0, j = 0, tmp = 1; i < n; i++) {
 			int[] a = arr[i], b = i > 0 ? arr[i - 1] : null;
-			if(same(a, b) == false) j++;
+			if(same(a, b) == false) {
+				j += tmp;
+				tmp = 1;
+			} else tmp++;
 			if(a[0] == m) System.out.println(j);
 		}
 	}
