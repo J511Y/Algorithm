@@ -1,5 +1,6 @@
+package programmers;
 import java.util.*;
-class Solution {
+class prgmers_17687 {
     public String solution(int n, int t, int m, int p) {
         StringBuilder sb = new StringBuilder();
         for(int i = 0; sb.length() < t * (m + 1); i++) sb.append(Integer.toString(i, n));
