@@ -1,10 +1,10 @@
 # 알고리즘 문제 목록 (AC 여부 추후 개발)
 
-	README.md 업데이트 : 2021-02-21 09:59   
+	README.md 업데이트 : 2021-02-25 11:44   
    
 
 
-## 백준 (총 436문제)
+## 백준 (총 439문제)
 * [1003번_DP](https://www.acmicpc.net/problem/1003)
 * [1009번_기본](https://www.acmicpc.net/problem/1009)
 * [1010번_DP](https://www.acmicpc.net/problem/1010)
@@ -289,6 +289,7 @@
 * [8320번_구현](https://www.acmicpc.net/problem/8320)
 * [8979번_정렬](https://www.acmicpc.net/problem/8979)
 * [9012번_스택](https://www.acmicpc.net/problem/9012)
+* [9019번_DFS와BFS](https://www.acmicpc.net/problem/9019)
 * [9020번_수학2](https://www.acmicpc.net/problem/9020)
 * [9095번_DP](https://www.acmicpc.net/problem/9095)
 * [9184번_DP](https://www.acmicpc.net/problem/9184)
@@ -370,11 +371,13 @@
 * [12865번_DP](https://www.acmicpc.net/problem/12865)
 * [13144번_투포인터](https://www.acmicpc.net/problem/13144)
 * [13199번_그리디](https://www.acmicpc.net/problem/13199)
+* [13549번_DFS와BFS](https://www.acmicpc.net/problem/13549)
 * [14002번_DP](https://www.acmicpc.net/problem/14002)
 * [14427번_SAQ](https://www.acmicpc.net/problem/14427)
 * [14469번_정렬](https://www.acmicpc.net/problem/14469)
 * [14497번_DFS와BFS](https://www.acmicpc.net/problem/14497)
 * [14499번_구현](https://www.acmicpc.net/problem/14499)
+* [14500번_브루트포스](https://www.acmicpc.net/problem/14500)
 * [14501번_DP](https://www.acmicpc.net/problem/14501)
 * [14502번_DFS와BFS](https://www.acmicpc.net/problem/14502)
 * [14503번_구현](https://www.acmicpc.net/problem/14503)
