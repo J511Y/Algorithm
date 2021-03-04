@@ -1,10 +1,10 @@
 # 알고리즘 문제 목록 (AC 여부 추후 개발)
 
-	README.md 업데이트 : 2021-02-25 11:44   
+	README.md 업데이트 : 2021-03-04 11:07   
    
 
 
-## 백준 (총 439문제)
+## 백준 (총 442문제)
 * [1003번_DP](https://www.acmicpc.net/problem/1003)
 * [1009번_기본](https://www.acmicpc.net/problem/1009)
 * [1010번_DP](https://www.acmicpc.net/problem/1010)
@@ -367,6 +367,7 @@
 * [12101번_백트래킹](https://www.acmicpc.net/problem/12101)
 * [12761번_DFS와BFS](https://www.acmicpc.net/problem/12761)
 * [12836번_기본](https://www.acmicpc.net/problem/12836)
+* [12851번_DFS와BFS](https://www.acmicpc.net/problem/12851)
 * [12852번_DFS와BFS](https://www.acmicpc.net/problem/12852)
 * [12865번_DP](https://www.acmicpc.net/problem/12865)
 * [13144번_투포인터](https://www.acmicpc.net/problem/13144)
@@ -424,6 +425,7 @@
 * [17219번_해시맵](https://www.acmicpc.net/problem/17219)
 * [17298번_스택](https://www.acmicpc.net/problem/17298)
 * [17302번_애드혹](https://www.acmicpc.net/problem/17302)
+* [17427번_기본수학](https://www.acmicpc.net/problem/17427)
 * [17626번_에라토스테네스의체](https://www.acmicpc.net/problem/17626)
 * [18108번_기본](https://www.acmicpc.net/problem/18108)
 * [18111번_브루트포스](https://www.acmicpc.net/problem/18111)
@@ -443,6 +445,7 @@
 * [20309번_애드혹](https://www.acmicpc.net/problem/20309)
 * [20500번_DP](https://www.acmicpc.net/problem/20500)
 * [20501번_비트마스크](https://www.acmicpc.net/problem/20501)
+* [20922번_투포인터](https://www.acmicpc.net/problem/20922)
 * [43238번](https://www.acmicpc.net/problem/43238)
 
 
