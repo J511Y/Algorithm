@@ -1,4 +1,4 @@
-package baekjoon_¿ì¼±¼øÀ§Å¥;
+package baekjoon_�켱����ť;
 
 import java.util.*;
 public class baekjoon_11000 {
