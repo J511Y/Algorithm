@@ -1,10 +1,10 @@
 # 알고리즘 문제 목록 (AC 여부 추후 개발)
 
-	README.md 업데이트 : 2021-05-17 11:45   
+	README.md 업데이트 : 2021-05-24 10:20   
    
 
 
-## 백준 (총 463문제)
+## 백준 (총 469문제)
 * [1003번_DP](https://www.acmicpc.net/problem/1003)
 * [1009번_기본](https://www.acmicpc.net/problem/1009)
 * [1010번_DP](https://www.acmicpc.net/problem/1010)
@@ -243,6 +243,7 @@
 * [3079번_이분탐색](https://www.acmicpc.net/problem/3079)
 * [3107번_문자열기본](https://www.acmicpc.net/problem/3107)
 * [3197번_DFS와BFS](https://www.acmicpc.net/problem/3197)
+* [3344번_애드혹](https://www.acmicpc.net/problem/3344)
 * [3460번_기본](https://www.acmicpc.net/problem/3460)
 * [3474번_기본](https://www.acmicpc.net/problem/3474)
 * [3518번_문자열기본](https://www.acmicpc.net/problem/3518)
@@ -251,12 +252,13 @@
 * [3986번_기본](https://www.acmicpc.net/problem/3986)
 * [4153번_수학2](https://www.acmicpc.net/problem/4153)
 * [4195번_유니온파인드](https://www.acmicpc.net/problem/4195)
-* [4358번_트라이](https://www.acmicpc.net/problem/4358)
+* [4358번_문자열기본](https://www.acmicpc.net/problem/4358)
 * [4373번_투포인터](https://www.acmicpc.net/problem/4373)
 * [4485번_DP](https://www.acmicpc.net/problem/4485)
 * [4641번_기본](https://www.acmicpc.net/problem/4641)
 * [4659번_기본](https://www.acmicpc.net/problem/4659)
 * [4949번_스택](https://www.acmicpc.net/problem/4949)
+* [5015번_문자열기본](https://www.acmicpc.net/problem/5015)
 * [5036번_기본](https://www.acmicpc.net/problem/5036)
 * [5211번_문자열기본](https://www.acmicpc.net/problem/5211)
 * [5212번_구현](https://www.acmicpc.net/problem/5212)
@@ -288,6 +290,7 @@
 * [6588번_기본수학](https://www.acmicpc.net/problem/6588)
 * [6603번_브루트포스](https://www.acmicpc.net/problem/6603)
 * [6679번_기본](https://www.acmicpc.net/problem/6679)
+* [6749번_기본](https://www.acmicpc.net/problem/6749)
 * [7490번_백트래킹](https://www.acmicpc.net/problem/7490)
 * [7562번_DFS와BFS](https://www.acmicpc.net/problem/7562)
 * [7568번_백트래킹](https://www.acmicpc.net/problem/7568)
@@ -296,6 +299,7 @@
 * [7662번_우선순위큐](https://www.acmicpc.net/problem/7662)
 * [7785번_기본](https://www.acmicpc.net/problem/7785)
 * [8320번_구현](https://www.acmicpc.net/problem/8320)
+* [8370번_기본](https://www.acmicpc.net/problem/8370)
 * [8979번_정렬](https://www.acmicpc.net/problem/8979)
 * [9012번_스택](https://www.acmicpc.net/problem/9012)
 * [9019번_DFS와BFS](https://www.acmicpc.net/problem/9019)
@@ -316,6 +320,7 @@
 * [9996번_기본](https://www.acmicpc.net/problem/9996)
 * [9997번_DFS와BFS](https://www.acmicpc.net/problem/9997)
 * [10026번_DFS와BFS](https://www.acmicpc.net/problem/10026)
+* [10096번_문자열기본](https://www.acmicpc.net/problem/10096)
 * [10162번_기본](https://www.acmicpc.net/problem/10162)
 * [10165번_정렬](https://www.acmicpc.net/problem/10165)
 * [10178번_기본](https://www.acmicpc.net/problem/10178)
@@ -387,6 +392,7 @@
 * [13144번_투포인터](https://www.acmicpc.net/problem/13144)
 * [13199번_그리디](https://www.acmicpc.net/problem/13199)
 * [13549번_DFS와BFS](https://www.acmicpc.net/problem/13549)
+* [13909번_기본수학](https://www.acmicpc.net/problem/13909)
 * [14002번_DP](https://www.acmicpc.net/problem/14002)
 * [14427번_SAQ](https://www.acmicpc.net/problem/14427)
 * [14469번_정렬](https://www.acmicpc.net/problem/14469)
