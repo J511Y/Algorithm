@@ -1,6 +1,6 @@
 # [level 3] 파괴되지 않은 건물 - 92344 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/92344?language=java) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/92344) 
 
 ### 성능 요약
 
